@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бухгалтерия для бизнеса в Польше — бесплатная консультация</title>
+  <meta name="description" content="Регистрация JDG и Sp. z o.o., бухгалтерия, VAT, ZUS, KSeF и адрес для регистрации бизнеса. Оставьте заявку — перезвоним и подберём тариф.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style-guide/tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#">ВАШ<span>БРЕНД</span></a>
+      <!-- TODO: реальный телефон -->
+      <a class="header__phone" href="tel:+48000000000">+48 000 000 000</a>
+      <a class="btn btn--primary btn--sm" href="#lead">Консультация</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <p class="eyebrow">Бухгалтерские услуги в Польше</p>
+          <h1>Ведём бухгалтерию вашей JDG или Sp.&nbsp;z&nbsp;o.o., пока вы развиваете бизнес</h1>
+          <p class="lead">Налоги, отчётность, VAT, ZUS и KSeF — на русском языке и без штрафов за пропущенные сроки.</p>
+          <ul class="checks">
+            <li>Регистрация компании под ключ</li>
+            <li>Ежемесячная бухгалтерия и расчёт налогов</li>
+            <li>Адрес для регистрации и приём корреспонденции</li>
+          </ul>
+        </div>
+        <form class="card form" id="lead" novalidate>
+          <h2 class="form__title">Бесплатная консультация</h2>
+          <p class="form__sub">Перезвоним в рабочее время и подберём тариф</p>
+          <label>Имя<input name="name" required autocomplete="name"></label>
+          <label>Телефон или мессенджер<input name="phone" required inputmode="tel" autocomplete="tel"></label>
+          <label>Форма бизнеса
+            <select name="type">
+              <option>JDG (ИП)</option>
+              <option>Sp. z o.o.</option>
+              <option>Ещё не зарегистрирован</option>
+            </select>
+          </label>
+          <button class="btn btn--primary btn--block" type="submit">Получить консультацию</button>
+          <p class="form__note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+          <p class="form__ok" hidden>Спасибо! Заявка отправлена — скоро свяжемся.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Что берём на себя</h2>
+        <div class="grid grid--4">
+          <article class="card service">
+            <h3>Регистрация бизнеса</h3>
+            <p>Консультации и сопровождение регистрации JDG и Sp. z o.o.</p>
+          </article>
+          <article class="card service">
+            <h3>Бухгалтерия</h3>
+            <p>Ведение книг, расчёт налогов, отчётность, VAT, ZUS и KSeF.</p>
+          </article>
+          <article class="card service">
+            <h3>Адрес для бизнеса</h3>
+            <p>Юридический адрес, приём корреспонденции, административная поддержка.</p>
+          </article>
+          <article class="card service">
+            <h3>Консультации</h3>
+            <p>Выбор формы налогообложения и ответы на вопросы по польскому праву.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Как начать работу</h2>
+        <ol class="steps">
+          <li><span>1</span><h3>Заявка</h3><p>Оставляете контакты — менеджер связывается с вами.</p></li>
+          <li><span>2</span><h3>Разбор ситуации</h3><p>Уточняем вид деятельности и подбираем подходящий тариф.</p></li>
+          <li><span>3</span><h3>Договор и старт</h3><p>Подписываем договор онлайн и берём учёт на себя.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <h2 class="section__title">Частые вопросы</h2>
+        <details><summary>Можно ли работать полностью онлайн?</summary><p>Да, документы передаются электронно, договор подписывается дистанционно.</p></details>
+        <details><summary>Вы работаете с KSeF?</summary><p>Да, выставление и учёт е-фактур в KSeF входит в бухгалтерское обслуживание.</p></details>
+        <details><summary>Сколько стоит обслуживание?</summary><p>Зависит от формы бизнеса и количества документов — точную стоимость назовём на консультации.</p></details>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta__inner">
+        <h2>Передайте бухгалтерию профессионалам</h2>
+        <a class="btn btn--light" href="#lead">Оставить заявку</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 ВАШ БРЕНД · <a href="#">Политика конфиденциальности</a></div>
+  </footer>
+
+  <script>
+    // TODO: подключить отправку в CRM (например, Bitrix24-форму)
+    document.getElementById('lead').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!this.checkValidity()) { this.reportValidity(); return; }
+      this.querySelector('.form__ok').hidden = false;
+      this.querySelector('button').disabled = true;
+    });
+  </script>
+</body>
+</html>

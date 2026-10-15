@@ -1,0 +1,29 @@
+/* Design tokens, извлечены с https://imosta.pl/ru/ (2026-10-15). См. tokens.json */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&subset=cyrillic&display=swap");
+
+:root {
+  --color-primary: #D11329;
+  --color-primary-hover: #A80F21;
+  --color-primary-soft: #F6DFDC;
+  --color-secondary: #151515;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #FBF3F2;
+  --color-text: #000000;
+  --color-text-muted: #5F5F5F;
+  --color-on-primary: #FFFFFF;
+  --color-border: #EAEAEA;
+
+  --font-base: "Montserrat", "Inter", system-ui, sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-body: 16px;
+  --fs-h3: 22px;
+  --fs-h2: clamp(26px, 4vw, 32px);
+  --fs-h1: clamp(30px, 5vw, 38px);
+
+  --radius-button: 0;
+  --radius-card: 4px;
+}

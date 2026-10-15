@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бухгалтерия для JDG и Sp. z o.o. в Польше — IMOSTA Group</title>
+  <meta name="description" content="Бухгалтерское сопровождение JDG и Sp. z o.o. в Польше: налоги, VAT, ZUS, KSeF, кадры, регистрация бизнеса. Работаем на RU / UA / EN / PL. Рассчитайте стоимость за 1 минуту.">
+
+  <!-- GTM: вставьте контейнер сюда (GTM-XXXXXXX). Все события уходят в window.dataLayer -->
+  <script>window.dataLayer = window.dataLayer || [];</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    // Токены бренда, извлечены с imosta.pl/ru (см. style-guide/tokens.json)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#D11329', hover: '#A80F21', soft: '#F6DFDC', tint: '#FBF3F2' },
+            ink: { DEFAULT: '#000000', dark: '#151515', muted: '#5F5F5F' },
+            line: '#EAEAEA',
+          },
+          fontFamily: { sans: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    [x-cloak] { display: none; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .opt input:checked + span { border-color: #D11329; background: #FBF3F2; box-shadow: inset 0 0 0 1px #D11329; }
+    .opt input:focus-visible + span { outline: 2px solid #D11329; outline-offset: 2px; }
+    .field-error { border-color: #D11329 !important; }
+  </style>
+</head>
+<body class="font-sans text-ink bg-white antialiased pb-20 md:pb-0">
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-line">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center gap-3 md:gap-6">
+      <a href="#" class="font-extrabold text-xl tracking-tight text-ink-dark shrink-0">IMOSTA<span class="text-brand"> Group</span></a>
+
+      <nav class="flex items-center text-xs font-semibold border border-line" aria-label="Язык">
+        <span class="px-2 py-1 bg-brand text-white" aria-current="true">RU</span>
+        <a href="https://imosta.pl/" class="px-2 py-1 hover:text-brand" hreflang="pl">PL</a>
+        <a href="https://imosta.pl/ua/" class="px-2 py-1 hover:text-brand" hreflang="uk">UA</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-4">
+        <a href="tel:+48573581162" data-track="call" data-location="header" class="hidden md:flex items-center gap-2 font-semibold hover:text-brand">
+          <svg class="w-5 h-5 text-brand" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          +48 573 581 162
+        </a>
+        <a href="https://t.me/+48573581162" target="_blank" rel="noopener" data-track="telegram" data-location="header" class="hidden lg:inline-flex font-semibold text-ink-muted hover:text-brand">Telegram</a>
+        <a href="#calc" data-track="cta" data-location="header" class="hidden sm:inline-flex bg-brand hover:bg-brand-hover text-white text-sm font-semibold px-4 py-2.5 border-2 border-brand hover:border-brand-hover transition">Рассчитать стоимость</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="bg-gradient-to-b from-brand-tint to-white">
+      <div class="max-w-6xl mx-auto px-4 py-10 md:py-16 grid lg:grid-cols-[1.15fr_1fr] gap-10 items-start">
+        <div>
+          <a href="https://maps.app.goo.gl/wNXPFuehQBoPK5pCA" target="_blank" rel="noopener" data-track="reviews" class="inline-flex items-center gap-2 bg-white border border-brand-soft px-3 py-1.5 text-sm font-semibold mb-5">
+            <span class="text-amber-500" aria-hidden="true">★★★★☆</span> 4.5 / 5 · 64 отзыва в Google
+          </a>
+          <h1 class="text-3xl md:text-[44px] leading-tight font-bold mb-4">
+            Бухгалтерия для <span class="text-brand">JDG и Sp.&nbsp;z&nbsp;o.o.</span> в Польше — на вашем языке и без сюрпризов от Urząd Skarbowy
+          </h1>
+          <p class="text-lg text-ink-muted mb-7">Налоги, VAT, ZUS, KSeF, кадры и регистрация бизнеса в одной команде. Заранее предупреждаем о сроках и объясняем польские процедуры простым языком.</p>
+
+          <ul class="grid sm:grid-cols-3 gap-3">
+            <li class="bg-white border border-brand-soft p-4">
+              <div class="w-9 h-9 bg-brand text-white grid place-items-center mb-2" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <!-- Формулировка гарантии: при наличии официальной гарантии замените текст ниже -->
+              <p class="font-semibold leading-snug">Контроль всех сроков US и ZUS</p>
+              <p class="text-sm text-ink-muted">Напоминаем заранее, а не за день до дедлайна</p>
+            </li>
+            <li class="bg-white border border-brand-soft p-4">
+              <div class="w-9 h-9 bg-brand text-white grid place-items-center mb-2" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+              </div>
+              <p class="font-semibold leading-snug">Свой бухгалтер</p>
+              <p class="text-sm text-ink-muted">Общение на RU / UA / EN / PL</p>
+            </li>
+            <li class="bg-white border border-brand-soft p-4">
+              <div class="w-9 h-9 bg-brand text-white grid place-items-center mb-2" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+              </div>
+              <p class="font-semibold leading-snug">KSeF и ZUS под ключ</p>
+              <p class="text-sm text-ink-muted">Е-фактуры, взносы, декларации</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hero lead form -->
+        <form id="hero-form" data-form="hero" class="lead-form bg-white border border-brand-soft border-t-4 border-t-brand shadow-xl shadow-black/5 p-6 md:p-7" novalidate>
+          <h2 class="text-xl font-bold mb-1">Бесплатная консультация</h2>
+          <p class="text-sm text-ink-muted mb-5">Специалист свяжется в рабочее время и ответит на вопросы по вашему бизнесу</p>
+
+          <label class="block text-sm font-medium mb-4">Имя
+            <input name="name" autocomplete="name" required minlength="2" class="mt-1.5 w-full border border-line px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+            <span class="err hidden text-xs text-brand mt-1">Укажите имя</span>
+          </label>
+          <label class="block text-sm font-medium mb-4">Телефон или Telegram
+            <input name="contact" required inputmode="tel" autocomplete="tel" placeholder="+48 500 000 000 или @username" data-contact class="mt-1.5 w-full border border-line px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+            <span class="err hidden text-xs text-brand mt-1">Введите номер (+48 XXX XXX XXX или международный) или @username</span>
+          </label>
+          <fieldset class="mb-5">
+            <legend class="text-sm font-medium mb-1.5">Форма бизнеса</legend>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="opt cursor-pointer"><input type="radio" name="business_type" value="JDG" class="sr-only" checked><span class="block text-center border border-line py-2.5 font-semibold text-sm">JDG</span></label>
+              <label class="opt cursor-pointer"><input type="radio" name="business_type" value="Sp. z o.o." class="sr-only"><span class="block text-center border border-line py-2.5 font-semibold text-sm">Sp. z o.o.</span></label>
+            </div>
+          </fieldset>
+          <button type="submit" class="w-full bg-brand hover:bg-brand-hover text-white font-bold py-4 border-2 border-brand hover:border-brand-hover transition disabled:opacity-60">Получить консультацию бесплатно</button>
+          <p class="text-xs text-ink-muted mt-3">Без спама. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+          <div class="success hidden mt-4 bg-brand-tint border border-brand-soft p-4 text-sm font-semibold">Спасибо! Заявка принята — скоро свяжемся.</div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ CALCULATOR / QUIZ ============ -->
+    <section id="calc" class="scroll-mt-20 py-14 md:py-20">
+      <div class="max-w-3xl mx-auto px-4">
+        <p class="text-brand font-semibold uppercase tracking-wider text-sm text-center mb-2">Калькулятор</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-center mb-3">Рассчитайте стоимость обслуживания</h2>
+        <p class="text-center text-ink-muted mb-8">3 вопроса — и ориентировочная цена на экране</p>
+
+        <div id="quiz" class="border border-brand-soft shadow-xl shadow-black/5">
+          <div class="h-1.5 bg-brand-soft"><div id="quiz-bar" class="h-full bg-brand transition-all duration-300" style="width:25%"></div></div>
+          <div class="p-6 md:p-8">
+            <p id="quiz-counter" class="text-sm text-ink-muted font-medium mb-2">Шаг 1 из 3</p>
+
+            <div class="quiz-step" data-step="1">
+              <h3 class="text-xl font-bold mb-5">Какая у вас форма бизнеса?</h3>
+              <div class="grid sm:grid-cols-3 gap-3">
+                <label class="opt cursor-pointer"><input type="radio" name="q_form" value="jdg" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">JDG</b><span class="text-sm text-ink-muted">Индивидуальный предприниматель</span></span></label>
+                <label class="opt cursor-pointer"><input type="radio" name="q_form" value="spzoo" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">Sp. z o.o.</b><span class="text-sm text-ink-muted">Компания с ограниченной ответственностью</span></span></label>
+                <label class="opt cursor-pointer"><input type="radio" name="q_form" value="new" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">Планирую открыть</b><span class="text-sm text-ink-muted">Нужна регистрация + бухгалтерия</span></span></label>
+              </div>
+            </div>
+
+            <div class="quiz-step hidden" data-step="2">
+              <h3 class="text-xl font-bold mb-5">Сколько документов (faktur) в месяц?</h3>
+              <div class="grid sm:grid-cols-3 gap-3">
+                <label class="opt cursor-pointer"><input type="radio" name="q_docs" value="1-10" class="sr-only"><span class="block border border-line p-4 text-center font-bold text-lg">1–10</span></label>
+                <label class="opt cursor-pointer"><input type="radio" name="q_docs" value="10-30" class="sr-only"><span class="block border border-line p-4 text-center font-bold text-lg">10–30</span></label>
+                <label class="opt cursor-pointer"><input type="radio" name="q_docs" value="30+" class="sr-only"><span class="block border border-line p-4 text-center font-bold text-lg">30+</span></label>
+              </div>
+            </div>
+
+            <div class="quiz-step hidden" data-step="3">
+              <h3 class="text-xl font-bold mb-1">Что ещё понадобится?</h3>
+              <p class="text-sm text-ink-muted mb-5">Можно выбрать несколько или пропустить</p>
+              <div class="grid sm:grid-cols-3 gap-3">
+                <label class="opt cursor-pointer"><input type="checkbox" name="q_extra" value="vat" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">Регистрация VAT</b><span class="text-sm text-ink-muted">VAT-R, VAT-UE</span></span></label>
+                <label class="opt cursor-pointer"><input type="checkbox" name="q_extra" value="kadry" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">Кадры и зарплаты</b><span class="text-sm text-ink-muted">Kadry i płace</span></span></label>
+                <label class="opt cursor-pointer"><input type="checkbox" name="q_extra" value="office" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">Виртуальный офис</b><span class="text-sm text-ink-muted">Адрес + корреспонденция</span></span></label>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div class="quiz-step hidden" data-step="4">
+              <h3 class="text-xl font-bold mb-4">Ваш ориентировочный расчёт</h3>
+              <ul id="quiz-breakdown" class="divide-y divide-line border-y border-line mb-4 text-sm"></ul>
+              <div class="flex items-baseline justify-between mb-1">
+                <span class="font-semibold">Итого в месяц</span>
+                <span class="text-3xl font-extrabold text-brand"><span id="quiz-total">—</span> zł</span>
+              </div>
+              <p id="quiz-onetime" class="text-sm text-ink-muted mb-1 hidden"></p>
+              <p class="text-xs text-ink-muted mb-6">Цены нетто, ориентировочно. Точная стоимость фиксируется в официальном предложении.</p>
+
+              <form id="quiz-form" data-form="quiz" class="lead-form bg-brand-tint border border-brand-soft p-5" novalidate>
+                <p class="font-semibold mb-3">Зафиксируйте цену и получите официальное КП в PDF</p>
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <label class="flex-1">
+                    <span class="sr-only">Телефон или Telegram</span>
+                    <input name="contact" required inputmode="tel" placeholder="+48 500 000 000 или @username" data-contact class="w-full border border-line bg-white px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+                    <span class="err hidden text-xs text-brand mt-1">Введите номер или @username</span>
+                  </label>
+                  <button type="submit" class="bg-brand hover:bg-brand-hover text-white font-bold px-6 py-3 border-2 border-brand hover:border-brand-hover transition disabled:opacity-60 self-start">Получить КП в PDF</button>
+                </div>
+                <div class="success hidden mt-4 font-semibold text-sm">Готово! Отправим предложение в выбранный канал в рабочее время.</div>
+              </form>
+            </div>
+
+            <div class="flex justify-between items-center mt-8">
+              <button id="quiz-back" type="button" class="text-sm font-semibold text-ink-muted hover:text-brand invisible">← Назад</button>
+              <button id="quiz-next" type="button" disabled class="bg-brand hover:bg-brand-hover text-white font-semibold px-6 py-3 border-2 border-brand transition disabled:opacity-40 disabled:cursor-not-allowed">Далее →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PAIN vs SOLUTION ============ -->
+    <section class="bg-brand-tint py-14 md:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-4xl font-bold text-center mb-3">Меняете бухгалтера? Знакомо?</h2>
+        <p class="text-center text-ink-muted mb-10">Почему предприниматели переходят в IMOSTA от другого бухгалтера</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <!-- rows generated in JS from PAINS to keep markup short -->
+          <div id="pains" class="contents"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOCIAL PROOF ============ -->
+    <section class="py-14 md:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <div>
+            <h2 class="text-2xl md:text-4xl font-bold mb-2">С кем мы работаем</h2>
+            <p class="text-ink-muted max-w-xl">Иностранные предприниматели, которые открывают, ведут или меняют сопровождение бизнеса в Польше. Специалисты из Беларуси, Украины и Польши.</p>
+          </div>
+          <a href="https://maps.app.goo.gl/wNXPFuehQBoPK5pCA" target="_blank" rel="noopener" data-track="reviews" class="flex items-center gap-4 border border-brand-soft px-5 py-4 hover:border-brand transition shrink-0">
+            <span class="text-4xl font-extrabold">4.5</span>
+            <span><span class="block text-amber-500 text-lg leading-none" aria-hidden="true">★★★★☆</span><span class="text-sm font-semibold">64 отзыва в Google →</span></span>
+          </a>
+        </div>
+
+        <!-- Кейсы — типовые ситуации клиентов из услуг IMOSTA.
+             Для блока цитат вставьте реальные отзывы клиентов (с их согласия) по шаблону:
+             <figure class="border p-6"><blockquote>«…»</blockquote><figcaption>Имя, бизнес, город</figcaption></figure> -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Смена бухгалтера</p>
+            <h3 class="font-bold mb-2">Переход в середине года</h3>
+            <p class="text-sm text-ink-muted">Принимаем документы от прежнего бухгалтера, проверяем расчёты и продолжаем учёт без разрыва.</p>
+          </article>
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Открытие бизнеса</p>
+            <h3 class="font-bold mb-2">Регистрация JDG / Sp. z o.o.</h3>
+            <p class="text-sm text-ink-muted">Сопровождаем регистрацию в CEIDG и KRS и подключаем бухгалтерию с первого дня.</p>
+          </article>
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Компания без оборотов</p>
+            <h3 class="font-bold mb-2">Sp. z o.o. «на паузе»</h3>
+            <p class="text-sm text-ink-muted">Отдельный формат для компаний без активной деятельности — отчётность сдаётся вовремя.</p>
+          </article>
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Сотрудники</p>
+            <h3 class="font-bold mb-2">Первый наём</h3>
+            <p class="text-sm text-ink-muted">Кадры и зарплаты, регистрация сотрудников в ZUS, расчёт взносов.</p>
+          </article>
+        </div>
+
+        <div class="mt-10 bg-ink-dark text-white p-6 md:p-8 grid sm:grid-cols-3 gap-6 text-center sm:text-left">
+          <div><p class="text-white/60 text-xs uppercase tracking-wider mb-1">NIP</p><p class="font-bold text-lg">1133089152</p></div>
+          <div><p class="text-white/60 text-xs uppercase tracking-wider mb-1">REGON</p><p class="font-bold text-lg">524697797</p></div>
+          <div><p class="text-white/60 text-xs uppercase tracking-wider mb-1">Реестр RDST</p><p class="font-bold text-lg">RDST-1861</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="bg-brand-tint py-14 md:py-20">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-2xl md:text-4xl font-bold text-center mb-10">Частые вопросы</h2>
+        <div id="faq" class="space-y-3">
+          <details class="bg-white border border-brand-soft group">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Можно ли сменить бухгалтера в середине года?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Да. Мы запрашиваем у прежнего бухгалтера документы и данные учёта, проверяем начисления и продолжаем вести книги с месяца перехода. Важно начать передачу заранее, до ближайшего срока отчётности.</p>
+          </details>
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Моя Sp. z o.o. не ведёт деятельность. Нужна ли бухгалтерия?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Да — даже компания без оборотов обязана сдавать отчётность. Для таких Sp. z o.o. у нас есть отдельный формат сопровождения с минимальным количеством операций.</p>
+          </details>
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Как вы работаете с KSeF?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Сопровождение KSeF входит в бухгалтерское обслуживание: помогаем настроить доступы и выставление е-фактур, а входящие фактуры из KSeF учитываем в бухгалтерии.</p>
+          </details>
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Сколько занимает регистрация JDG или Sp. z o.o.?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Сроки зависят от формы бизнеса, способа регистрации и рассмотрения заявки в CEIDG или KRS. На консультации мы назовём ориентировочные сроки для вашего случая и подготовим документы, чтобы избежать возвратов.</p>
+          </details>
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Можно ли работать полностью онлайн?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Да. Документы передаются через онлайн-кабинет, на вопросы отвечаем онлайн на RU / UA / EN / PL. Если нужно — встречаемся в офисе в Варшаве.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="bg-brand text-white py-14">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-2">Передайте бухгалтерию IMOSTA</h2>
+          <p class="text-white/80">Расчёт стоимости — за минуту, консультация — бесплатно.</p>
+        </div>
+        <a href="#calc" data-track="cta" data-location="final" class="bg-white text-brand font-bold px-8 py-4 border-2 border-white hover:bg-transparent hover:text-white transition">Рассчитать стоимость</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-ink-dark text-white/70 py-10 text-sm">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+      <div>
+        <p class="text-white font-extrabold text-lg mb-2">IMOSTA<span class="text-brand"> Group</span></p>
+        <p>Бухгалтерские, юридические и консультационные услуги для бизнеса в Польше.</p>
+      </div>
+      <address class="not-italic space-y-1">
+        <p>ul. Ostrobramska 101, 04-041 Warszawa</p>
+        <p><a href="tel:+48573581162" data-track="call" data-location="footer" class="text-white hover:text-brand">+48 573 581 162</a></p>
+        <p><a href="mailto:info@imosta.pl" data-track="email" data-location="footer" class="text-white hover:text-brand">info@imosta.pl</a></p>
+      </address>
+      <div class="space-y-1">
+        <p>NIP 1133089152 · REGON 524697797</p>
+        <p>Номер в реестре RDST-1861</p>
+        <p class="text-white/50 text-xs pt-2">IMOSTA Group не является государственным органом и не представляет KRS, CEIDG, Urząd Skarbowy или ZUS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE STICKY BAR ============ -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-line grid grid-cols-2 gap-2 p-2 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+    <a href="tel:+48573581162" data-track="call" data-location="mobile_bar" class="flex items-center justify-center gap-2 border-2 border-brand text-brand font-bold py-3">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      Позвонить
+    </a>
+    <a href="https://t.me/+48573581162" target="_blank" rel="noopener" data-track="telegram" data-location="mobile_bar" class="flex items-center justify-center gap-2 bg-brand text-white font-bold py-3 border-2 border-brand">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3.1c.9-.3 1.6.2 1.4 1.2z"/></svg>
+      Telegram
+    </a>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* ---------- Config ---------- */
+    // Куда отправлять заявки (CRM-вебхук, Bitrix24 и т.п.). Пусто — заявка только пушится в dataLayer.
+    var LEAD_ENDPOINT = '';
+
+    // ВНИМАНИЕ: цены-заглушки. Замените на актуальный прайс IMOSTA перед запуском.
+    var PRICING = {
+      base:  { jdg: 350, spzoo: 900, new: 350 },          // zł/мес, базовое обслуживание
+      docs:  { '1-10': 0, '10-30': 150, '30+': 350 },     // надбавка за объём документов
+      extra: { vat: { label: 'Регистрация VAT', oneTime: 300 },
+               kadry: { label: 'Кадры и зарплаты (1 сотрудник)', monthly: 100 },
+               office: { label: 'Виртуальный офис', monthly: 150 } },
+      registration: 800                                    // разово, для «Планирую открыть»
+    };
+
+    var LABELS = {
+      form: { jdg: 'JDG', spzoo: 'Sp. z o.o.', new: 'Регистрация + бухгалтерия' },
+    };
+
+    var PAINS = [
+      ['Пропущенные сроки и штрафы', 'Бухгалтер напомнил о декларации в последний день — или не напомнил вовсе.',
+       'Календарь сроков US и ZUS и напоминания заранее. Вы знаете, что и когда передать.'],
+      ['Тишина в критические даты', 'Конец месяца, а бухгалтер не отвечает в мессенджерах.',
+       'Персональный специалист и онлайн-поддержка по текущим вопросам.'],
+      ['Нет поддержки на вашем языке', 'Польские термины и письма из urzędu без объяснений.',
+       'Объясняем процедуры простым языком на RU / UA / EN / PL.'],
+      ['Страх проверки Urząd Skarbowy', 'Непонятно, всё ли в порядке с документами и VAT.',
+       'Порядок в faktury, KSeF и выписках. Сопровождаем при запросах из учреждений.']
+    ];
+
+    /* ---------- Tracking ---------- */
+    function track(event, params) {
+      window.dataLayer.push(Object.assign({ event: event }, params || {}));
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('[data-track]');
+      if (!el) return;
+      var type = el.getAttribute('data-track');
+      var map = { call: 'contact_click', telegram: 'contact_click', email: 'contact_click', cta: 'cta_click', reviews: 'reviews_click' };
+      track(map[type] || 'click', { contact_type: type, location: el.getAttribute('data-location') || '' });
+    });
+
+    /* ---------- Pain/solution render ---------- */
+    var painsEl = document.getElementById('pains');
+    PAINS.forEach(function (p) {
+      var card = document.createElement('div');
+      card.className = 'bg-white border border-brand-soft grid grid-rows-[auto_1fr]';
+      card.innerHTML =
+        '<div class="p-5 border-b border-brand-soft"><p class="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Проблема</p>' +
+        '<h3 class="font-bold text-lg mb-1">✕ ' + p[0] + '</h3><p class="text-sm text-ink-muted">' + p[1] + '</p></div>' +
+        '<div class="p-5 bg-white"><p class="text-xs font-bold uppercase tracking-wider text-brand mb-1">Решение IMOSTA</p>' +
+        '<p class="font-medium">✓ ' + p[2] + '</p></div>';
+      painsEl.appendChild(card);
+    });
+
+    /* ---------- Phone / Telegram validation & mask ---------- */
+    function digits(s) { return s.replace(/\D/g, ''); }
+
+    function formatPhone(raw, final) {
+      var d = digits(raw);
+      var plus = raw.trim().startsWith('+');
+      if (!d) return plus ? '+' : '';
+      if (!plus) {
+        // Без «+»: при наборе только группируем цифры, код страны подставляем на blur
+        if (final && d.length === 9) d = '48' + d;
+        else if (!(final && d.length === 11 && d.startsWith('48'))) return d.slice(0, 15).replace(/(\d{3})(?=\d)/g, '$1 ');
+      }
+      if (d.startsWith('48')) {
+        var n = d.slice(2, 11);
+        return ('+48 ' + [n.slice(0, 3), n.slice(3, 6), n.slice(6, 9)].filter(Boolean).join(' ')).trim();
+      }
+      return '+' + d.slice(0, 15); // международный, E.164
+    }
+
+    function parseContact(value) {
+      var v = value.trim();
+      if (/^@?[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(v) && /[a-zA-Z]/.test(v)) {
+        return { valid: true, type: 'telegram', value: '@' + v.replace(/^@/, '') };
+      }
+      var d = digits(v);
+      if (!v.startsWith('+') && d.length === 9) d = '48' + d;
+      if (d.startsWith('48')) return { valid: d.length === 11, type: 'phone', value: '+' + d };
+      return { valid: d.length >= 8 && d.length <= 15 && (v.startsWith('+') || d.length > 9), type: 'phone', value: '+' + d };
+    }
+
+    document.querySelectorAll('[data-contact]').forEach(function (input) {
+      input.addEventListener('input', function () {
+        var v = input.value;
+        // Маска применяется только если вводят номер, а не @username
+        if (/^[\d\s+()-]+$/.test(v)) input.value = formatPhone(v);
+        setError(input, false);
+      });
+      input.addEventListener('blur', function () {
+        if (/^[\d\s+()-]+$/.test(input.value)) input.value = formatPhone(input.value, true);
+      });
+    });
+
+    function setError(input, on) {
+      input.classList.toggle('field-error', on);
+      var err = input.parentElement.querySelector('.err');
+      if (err) err.classList.toggle('hidden', !on);
+      input.setAttribute('aria-invalid', on ? 'true' : 'false');
+    }
+
+    /* ---------- Lead submission ---------- */
+    function submitLead(form, extra) {
+      var data = { form_id: form.getAttribute('data-form'), page: location.href, lang: 'ru' };
+      var ok = true;
+
+      var name = form.querySelector('[name="name"]');
+      if (name) {
+        var nameOk = name.value.trim().length >= 2;
+        setError(name, !nameOk); ok = ok && nameOk;
+        data.name = name.value.trim();
+      }
+      var contactInput = form.querySelector('[name="contact"]');
+      var contact = parseContact(contactInput.value);
+      setError(contactInput, !contact.valid); ok = ok && contact.valid;
+      data.contact = contact.value; data.contact_type = contact.type;
+
+      var bt = form.querySelector('[name="business_type"]:checked');
+      if (bt) data.business_type = bt.value;
+      Object.assign(data, extra || {});
+
+      if (!ok) {
+        track('form_error', { form_id: data.form_id });
+        (form.querySelector('.field-error') || {}).focus && form.querySelector('.field-error').focus();
+        return;
+      }
+
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+
+      var done = function () {
+        form.querySelector('.success').classList.remove('hidden');
+        // PII (имя, телефон) в GA4 не передаём — только параметры заявки
+        track('generate_lead', { form_id: data.form_id, contact_type: data.contact_type, business_type: data.business_type || '', value: data.estimate_monthly || 0, currency: 'PLN' });
+      };
+
+      if (!LEAD_ENDPOINT) { done(); return; }
+      fetch(LEAD_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); done(); })
+        .catch(function () {
+          btn.disabled = false;
+          track('form_submit_failed', { form_id: data.form_id });
+          alert('Не удалось отправить заявку. Позвоните нам: +48 573 581 162');
+        });
+    }
+
+    document.getElementById('hero-form').addEventListener('submit', function (e) {
+      e.preventDefault(); submitLead(this);
+    });
+
+    /* ---------- Quiz ---------- */
+    var step = 1, TOTAL = 3, started = false;
+    var steps = document.querySelectorAll('.quiz-step');
+    var nextBtn = document.getElementById('quiz-next');
+    var backBtn = document.getElementById('quiz-back');
+    var quiz = document.getElementById('quiz');
+
+    function answer(name) {
+      var el = quiz.querySelector('[name="' + name + '"]:checked');
+      return el ? el.value : null;
+    }
+    function extras() {
+      return Array.prototype.map.call(quiz.querySelectorAll('[name="q_extra"]:checked'), function (el) { return el.value; });
+    }
+
+    function render() {
+      steps.forEach(function (s) { s.classList.toggle('hidden', +s.dataset.step !== step); });
+      document.getElementById('quiz-bar').style.width = (step / (TOTAL + 1) * 100) + '%';
+      document.getElementById('quiz-counter').textContent = step <= TOTAL ? 'Шаг ' + step + ' из ' + TOTAL : 'Результат';
+      backBtn.classList.toggle('invisible', step === 1);
+      nextBtn.classList.toggle('hidden', step > TOTAL);
+      nextBtn.textContent = step === TOTAL ? 'Показать расчёт →' : 'Далее →';
+      nextBtn.disabled = (step === 1 && !answer('q_form')) || (step === 2 && !answer('q_docs'));
+    }
+
+    function calc() {
+      var form = answer('q_form'), docs = answer('q_docs'), ex = extras();
+      var rows = [], monthly = 0, oneTime = 0;
+      var base = PRICING.base[form];
+      rows.push(['Бухгалтерия: ' + LABELS.form[form], base]); monthly += base;
+      if (PRICING.docs[docs]) { rows.push(['Объём документов: ' + docs + ' / мес', PRICING.docs[docs]]); monthly += PRICING.docs[docs]; }
+      ex.forEach(function (k) {
+        var x = PRICING.extra[k];
+        if (x.monthly) { rows.push([x.label, x.monthly]); monthly += x.monthly; }
+        if (x.oneTime) { rows.push([x.label + ' (разово)', x.oneTime, true]); oneTime += x.oneTime; }
+      });
+      if (form === 'new') { rows.push(['Сопровождение регистрации (разово)', PRICING.registration, true]); oneTime += PRICING.registration; }
+      return { rows: rows, monthly: monthly, oneTime: oneTime, form: form, docs: docs, extras: ex };
+    }
+
+    function showResult() {
+      var r = calc();
+      document.getElementById('quiz-breakdown').innerHTML = r.rows.map(function (row) {
+        return '<li class="flex justify-between py-2.5"><span>' + row[0] + '</span><span class="font-semibold">' +
+          row[1] + ' zł' + (row[2] ? '' : '/мес') + '</span></li>';
+      }).join('');
+      document.getElementById('quiz-total').textContent = 'от ' + r.monthly;
+      var ot = document.getElementById('quiz-onetime');
+      ot.classList.toggle('hidden', !r.oneTime);
+      ot.textContent = 'Разовые услуги: ' + r.oneTime + ' zł';
+      track('quiz_complete', { legal_form: r.form, invoices: r.docs, extras: r.extras.join(','), value: r.monthly, currency: 'PLN' });
+      return r;
+    }
+
+    quiz.addEventListener('change', function (e) {
+      if (!started) { started = true; track('quiz_start'); }
+      render();
+      // Авто-переход на одиночном выборе — меньше кликов
+      if (e.target.type === 'radio' && e.target.name.startsWith('q_') && step < TOTAL) {
+        setTimeout(function () { goNext(); }, 250);
+      }
+    });
+
+    function goNext() {
+      if (nextBtn.disabled) return;
+      track('quiz_step', { step: step });
+      step++;
+      if (step > TOTAL) showResult();
+      render();
+    }
+    nextBtn.addEventListener('click', goNext);
+    backBtn.addEventListener('click', function () { step = Math.max(1, step - 1); render(); });
+
+    document.getElementById('quiz-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var r = calc();
+      submitLead(this, { legal_form: r.form, invoices: r.docs, extras: r.extras, estimate_monthly: r.monthly, estimate_one_time: r.oneTime });
+    });
+
+    /* ---------- FAQ: одна открытая вкладка ---------- */
+    var faqs = document.querySelectorAll('#faq details');
+    faqs.forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (!d.open) return;
+        faqs.forEach(function (o) { if (o !== d) o.open = false; });
+        track('faq_open', { question: d.querySelector('summary').textContent.replace('+', '').trim() });
+      });
+    });
+
+    render();
+  })();
+  </script>
+</body>
+</html>
