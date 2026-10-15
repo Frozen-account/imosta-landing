@@ -77,7 +77,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg>
               Комплексное ведение Sp. z o.o. от 300 zł / мес
             </span>
-            <a href="https://maps.app.goo.gl/wNXPFuehQBoPK5pCA" target="_blank" rel="noopener" data-track="reviews" class="inline-flex items-center gap-2 bg-white border border-brand-soft px-3 py-1.5 text-sm font-semibold">
+            <a href="https://maps.google.com/?cid=8662456915484114111" target="_blank" rel="noopener noreferrer" data-track="reviews" class="inline-flex items-center gap-2 bg-white border border-brand-soft px-3 py-1.5 text-sm font-semibold hover:border-brand hover:underline underline-offset-4 transition" title="Открыть отзывы в Google Maps">
               <span class="text-amber-500" aria-hidden="true">★★★★☆</span> 4.5 / 5 · 64 отзыва в Google
             </a>
           </div>
@@ -193,7 +193,7 @@
             <h2 class="text-2xl md:text-4xl font-bold mb-2">Что входит в сопровождение Sp. z o.o.</h2>
             <p class="text-ink-muted max-w-xl">Работаем с иностранными владельцами компаний в Польше. Специалисты из Беларуси, Украины и Польши.</p>
           </div>
-          <a href="https://maps.app.goo.gl/wNXPFuehQBoPK5pCA" target="_blank" rel="noopener" data-track="reviews" class="flex items-center gap-4 border border-brand-soft px-5 py-4 hover:border-brand transition shrink-0">
+          <a href="https://maps.google.com/?cid=8662456915484114111" target="_blank" rel="noopener noreferrer" data-track="reviews" class="flex items-center gap-4 border border-brand-soft px-5 py-4 hover:border-brand transition shrink-0" title="Открыть отзывы в Google Maps">
             <span class="text-4xl font-extrabold">4.5</span>
             <span><span class="block text-amber-500 text-lg leading-none" aria-hidden="true">★★★★☆</span><span class="text-sm font-semibold">64 отзыва в Google →</span></span>
           </a>
@@ -315,7 +315,7 @@
         <p>Бухгалтерские, юридические и консультационные услуги для бизнеса в Польше.</p>
       </div>
       <address class="not-italic space-y-1">
-        <p>ul. Ostrobramska 101, 04-041 Warszawa</p>
+        <p><a href="https://maps.google.com/?cid=8662456915484114111" target="_blank" rel="noopener noreferrer" data-track="map" data-location="footer" class="text-white hover:text-brand underline decoration-white/30 underline-offset-4 hover:decoration-brand transition" title="Открыть в Google Maps">ul. Ostrobramska 101/336, 04-041 Warszawa</a></p>
         <p><a href="tel:+48573581162" data-track="call" data-location="footer" class="text-white hover:text-brand">+48 573 581 162</a></p>
         <p><a href="mailto:info@imosta.pl" data-track="email" data-location="footer" class="text-white hover:text-brand">info@imosta.pl</a></p>
       </address>
@@ -366,7 +366,7 @@
       var el = e.target.closest('[data-track]');
       if (!el) return;
       var type = el.getAttribute('data-track');
-      var map = { call: 'contact_click', telegram: 'contact_click', email: 'contact_click', cta: 'cta_click', reviews: 'reviews_click' };
+      var map = { call: 'contact_click', telegram: 'contact_click', email: 'contact_click', cta: 'cta_click', reviews: 'reviews_click', map: 'map_click' };
       track(map[type] || 'click', { contact_type: type, location: el.getAttribute('data-location') || '' });
     });
 
