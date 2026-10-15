@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бухгалтерія для Sp. z o.o. у Польщі — IMOSTA Group</title>
+  <meta name="description" content="Комплексне ведення Sp. z o.o. у Польщі від 300 зл / міс.: księgi rachunkowe, KRS, CIT, VAT-UE, KSeF, виплати правлінню. Персональний менеджер, 250+ клієнтів, eCommerce, Amazon, Allegro, Stripe.">
+  <meta property="og:title" content="Бухгалтерський супровід Sp. z o.o. у Польщі — IMOSTA Group">
+  <meta property="og:description" content="Комплексне ведення Sp. z o.o. від 300 зл / міс. Вашою мовою, без ризиків та з індивідуальним підходом. 250+ клієнтів у Польщі.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+  <meta name="theme-color" content="#D11329">
+
+  <!-- GTM: вставте контейнер сюди (GTM-XXXXXXX). Усі події надходять у window.dataLayer -->
+  <script>window.dataLayer = window.dataLayer || [];</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    // Токени бренду, взяті з imosta.pl/ru (див. style-guide/tokens.json)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#D11329', hover: '#A80F21', soft: '#F6DFDC', tint: '#FBF3F2' },
+            ink: { DEFAULT: '#000000', dark: '#151515', muted: '#5F5F5F' },
+            line: '#EAEAEA',
+          },
+          fontFamily: { sans: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .opt input:checked + span { border-color: #D11329; background: #FBF3F2; box-shadow: inset 0 0 0 1px #D11329; }
+    .opt input:focus-visible + span { outline: 2px solid #D11329; outline-offset: 2px; }
+    .field-error { border-color: #D11329 !important; }
+  </style>
+</head>
+<body class="font-sans text-ink bg-white antialiased pb-20 md:pb-0">
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-line">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center gap-3 md:gap-6">
+      <a href="/ua" class="font-extrabold text-xl tracking-tight text-ink-dark shrink-0">IMOSTA<span class="text-brand"> Group</span></a>
+
+      <nav class="flex items-center text-xs font-semibold border border-line" aria-label="Мова">
+        <a href="/" class="px-2 py-1 hover:text-brand" hreflang="ru">RU</a>
+        <a href="/eng" class="px-2 py-1 hover:text-brand" hreflang="en">EN</a>
+        <a href="/ua" class="px-2 py-1 bg-brand text-white" hreflang="uk" aria-current="page">UA</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-4">
+        <a href="tel:+48573581162" data-track="call" data-location="header" class="hidden md:flex items-center gap-2 font-semibold hover:text-brand">
+          <svg class="w-5 h-5 text-brand" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          +48 573 581 162
+        </a>
+        <a href="https://t.me/IMOSTA_bot" target="_blank" rel="noopener noreferrer" data-track="telegram" data-location="header" class="hidden lg:inline-flex font-semibold text-ink-muted hover:text-brand">Telegram</a>
+        <a href="#hero-form" data-track="cta" data-location="header" data-focus-form="hero-form" class="hidden sm:inline-flex bg-brand hover:bg-brand-hover text-white text-sm font-semibold px-4 py-2.5 border-2 border-brand hover:border-brand-hover transition">Залишити заявку</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="bg-gradient-to-b from-brand-tint to-white">
+      <div class="max-w-6xl mx-auto px-4 py-10 md:py-16 grid lg:grid-cols-[1.15fr_1fr] gap-10 items-start">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-5">
+            <span class="inline-flex items-center gap-2 bg-brand text-white px-3 py-1.5 text-sm font-bold">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg>
+              Комплексне ведення Sp. z o.o. від 300 зл / міс.
+            </span>
+            <a href="https://maps.google.com/?cid=8662456915484114111" target="_blank" rel="noopener noreferrer" data-track="reviews" class="inline-flex items-center gap-2 bg-white border border-brand-soft px-3 py-1.5 text-sm font-semibold hover:border-brand hover:underline underline-offset-4 transition" title="Відкрити відгуки в Google Maps">
+              <span class="text-amber-500" aria-hidden="true">★★★★☆</span> 4.5 / 5 · 64 відгуки в Google
+            </a>
+          </div>
+          <h1 class="text-3xl md:text-[42px] leading-tight font-bold mb-4">
+            Бухгалтерський супровід <span class="text-brand">Sp.&nbsp;z&nbsp;o.o.</span> у Польщі - вашою мовою, без ризиків та з індивідуальним підходом <span class="text-[#D11329] whitespace-nowrap">від 300 зл/міс.</span>
+          </h1>
+          <p class="text-lg text-ink-muted mb-7">Повний бухгалтерський облік (Księgi rachunkowe), звітність до KRS, CIT, VAT-UE, KSeF та розрахунок виплат керівництву. Беремо на себе відповідальність, щоб ви спокійно розвивали бізнес.</p>
+
+          <ul class="grid sm:grid-cols-3 gap-3">
+            <li class="bg-white border border-brand-soft p-4">
+              <div class="w-9 h-9 bg-brand text-white grid place-items-center mb-2" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <p class="font-semibold leading-snug">Звітність до KRS та US</p>
+              <p class="text-sm text-ink-muted">Своєчасне подання Sprawozdanie finansowe, захист від штрафів</p>
+            </li>
+            <li class="bg-white border border-brand-soft p-4">
+              <div class="w-9 h-9 bg-brand text-white grid place-items-center mb-2" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+              </div>
+              <p class="font-semibold leading-snug">Персональний менеджер</p>
+              <p class="text-sm text-ink-muted">Детально вникаємо в процеси вашої компанії та розбираємося в усіх нюансах законодавства. Українською, у зручному месенджері</p>
+            </li>
+            <li class="bg-white border border-brand-soft p-4">
+              <div class="w-9 h-9 bg-brand text-white grid place-items-center mb-2" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2 .8 3 2.9 3 6"/></svg>
+              </div>
+              <p class="font-semibold leading-snug">Безпека правління (Zarząd)</p>
+              <p class="text-sm text-ink-muted">Податкове планування, дивіденди, Uchwała zarządu</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hero lead form -->
+        <form id="hero-form" data-form="hero" data-source="Landing Page (UA)" class="lead-form scroll-mt-24 bg-white border border-brand-soft border-t-4 border-t-brand shadow-xl shadow-black/5 p-6 md:p-7" novalidate>
+          <div class="flex items-start justify-between gap-3 mb-1">
+            <h2 class="text-xl font-bold">Бухгалтерія для вашої Sp. z o.o.</h2>
+            <span class="shrink-0 bg-brand-tint border border-brand-soft text-brand text-xs font-bold px-2 py-1 whitespace-nowrap">від 300 зл / міс.</span>
+          </div>
+          <p class="text-sm text-ink-muted mb-5">Фахівець зв'яжеться з вами в робочий час і назве вартість обслуговування</p>
+
+          <label class="block text-sm font-medium mb-4">Ім'я
+            <input name="name" autocomplete="name" required minlength="2" class="mt-1.5 w-full border border-line px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+            <span class="err hidden text-xs text-brand mt-1">Вкажіть ім'я</span>
+          </label>
+          <label class="block text-sm font-medium mb-4">Телефон / Telegram
+            <input name="contact" required inputmode="tel" autocomplete="tel" placeholder="+48 500 000 000 або @username" data-contact class="mt-1.5 w-full border border-line px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+            <span class="err hidden text-xs text-brand mt-1">Введіть номер (+48 XXX XXX XXX або міжнародний) чи @username</span>
+          </label>
+          <fieldset class="mb-5">
+            <legend class="text-sm font-medium mb-1.5">Статус компанії</legend>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="opt cursor-pointer"><input type="radio" name="company_status" value="active" class="sr-only" checked><span class="flex items-center justify-center text-center h-full border border-line px-2 py-2.5 font-semibold text-sm leading-tight">Діюча компанія</span></label>
+              <label class="opt cursor-pointer"><input type="radio" name="company_status" value="new_or_dormant" class="sr-only"><span class="flex items-center justify-center text-center h-full border border-line px-2 py-2.5 font-semibold text-sm leading-tight">Нова / Без діяльності</span></label>
+            </div>
+          </fieldset>
+          <button type="submit" class="w-full bg-brand hover:bg-brand-hover text-white font-bold py-4 border-2 border-brand hover:border-brand-hover transition disabled:opacity-60">Залишити заявку</button>
+          <p class="text-xs text-ink-muted mt-3">Без спаму. Натискаючи кнопку, ви погоджуєтеся на обробку персональних даних.</p>
+          <div class="success hidden mt-4 bg-brand-tint border border-brand-soft p-4 text-sm font-semibold">Дякуємо! Заявку прийнято — незабаром зв'яжемося.</div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ CLIENTS, NICHES & INTEGRATIONS ============ -->
+    <section class="bg-ink-dark text-white py-12 md:py-14">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-[auto_1fr] gap-8 lg:gap-14 items-center">
+        <div class="text-center lg:text-left lg:border-r lg:border-white/15 lg:pr-14">
+          <p class="text-5xl md:text-6xl font-extrabold text-brand leading-none">250+</p>
+          <p class="mt-2 font-semibold">активних клієнтів у Польщі</p>
+          <p class="text-sm text-white/60 mt-1">Понад 250 задоволених клієнтів</p>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-white/50 mb-3">Ключові ніші</p>
+          <ul class="flex flex-wrap gap-2 mb-6" aria-label="Ключові ніші">
+            <li class="border border-white/20 px-3 py-1.5 text-sm font-semibold">eCommerce</li>
+            <li class="border border-white/20 px-3 py-1.5 text-sm font-semibold">Транспорт і логістика</li>
+            <li class="border border-white/20 px-3 py-1.5 text-sm font-semibold">IT та розробка</li>
+            <li class="border border-white/20 px-3 py-1.5 text-sm font-semibold">Міжнародні послуги</li>
+            <li class="border border-white/20 px-3 py-1.5 text-sm text-white/60">та інші</li>
+          </ul>
+          <p class="text-xs font-bold uppercase tracking-wider text-white/50 mb-3">Платформи та платіжні сервіси</p>
+          <ul class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2 mb-4" aria-label="Платформи та платіжні сервіси">
+            <li class="bg-white/5 border border-white/10 py-3 text-center font-bold tracking-tight">Amazon</li>
+            <li class="bg-white/5 border border-white/10 py-3 text-center font-bold tracking-tight">Allegro</li>
+            <li class="bg-white/5 border border-white/10 py-3 text-center font-bold tracking-tight">Stripe</li>
+            <li class="bg-white/5 border border-white/10 py-3 text-center font-bold tracking-tight">Wise</li>
+            <li class="bg-white/5 border border-white/10 py-3 text-center font-bold tracking-tight">PayPal</li>
+            <li class="bg-white/5 border border-white/10 py-3 text-center font-bold tracking-tight">Shopify</li>
+            <li class="bg-white/5 border border-white/10 py-3 text-center font-bold tracking-tight">eBay</li>
+          </ul>
+          <p class="text-sm text-white/70">Вільно працюємо з мультивалютними виписками, субрахунками та звітами міжнародних маркетплейсів і платіжних шлюзів.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HIGH SERVICE STANDARDS ============ -->
+    <section class="bg-white py-14 md:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#D11329] bg-red-50 px-3 py-1 rounded-full">Наш підхід до сервісу</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mt-3 mb-4">Партнер по бізнесу, а не просто номер у базі</h2>
+          <p class="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg mb-8">Ми руйнуємо стереотип про байдужі бухгалтерські бюро. Нам щиро не байдуже: ми ретельно вникаємо у ваш бізнес, ділимося практичним досвідом і бережемо ваш час.</p>
+        </div>
+
+        <div class="text-center mb-10">
+          <div class="inline-block bg-brand-tint border border-brand-soft px-6 sm:px-10 py-5">
+            <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#D11329] tracking-tight">від 300 зл / міс.</p>
+            <p class="text-sm text-gray-500 font-medium mt-2">Чесна ціна за професійний бухгалтерський тил без прихованих комісій</p>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <article class="bg-white border border-gray-200 p-6 hover:border-[#D11329] hover:shadow-lg transition">
+            <span class="inline-flex items-center justify-center w-12 h-12 bg-red-50 text-[#D11329] mb-4" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
+            </span>
+            <h3 class="font-bold text-gray-900 mb-2">Вникаємо в усі нюанси</h3>
+            <p class="text-sm text-gray-600">Не просто механічно проводимо фактури, а розбираємося в архітектурі ваших продажів, маркетплейсах, контрагентах і бізнес-моделі компанії.</p>
+          </article>
+          <article class="bg-white border border-gray-200 p-6 hover:border-[#D11329] hover:shadow-lg transition">
+            <span class="inline-flex items-center justify-center w-12 h-12 bg-red-50 text-[#D11329] mb-4" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path stroke-linecap="round" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            </span>
+            <h3 class="font-bold text-gray-900 mb-2">Самі нагадуємо про документи</h3>
+            <p class="text-sm text-gray-600">Завчасно відстежуємо пропущені інвойси, чеки та банківські виписки. Нагадуємо вчасно, а не за 2 години до подання декларації.</p>
+          </article>
+          <article class="bg-white border border-gray-200 p-6 hover:border-[#D11329] hover:shadow-lg transition">
+            <span class="inline-flex items-center justify-center w-12 h-12 bg-red-50 text-[#D11329] mb-4" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>
+            </span>
+            <h3 class="font-bold text-gray-900 mb-2">Досвід 250+ компаній на вашу користь</h3>
+            <p class="text-sm text-gray-600">Ділимося перевіреними рішеннями та попереджаємо про підводні камені польського податкового законодавства ще до того, як вони стануть проблемою.</p>
+          </article>
+          <article class="bg-white border border-gray-200 p-6 hover:border-[#D11329] hover:shadow-lg transition">
+            <span class="inline-flex items-center justify-center w-12 h-12 bg-red-50 text-[#D11329] mb-4" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 21l1.9-5.2A8.4 8.4 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/><path stroke-linecap="round" d="M8 10h8M8 14h5"/></svg>
+            </span>
+            <h3 class="font-bold text-gray-900 mb-2">Персональний менеджер на зв'язку</h3>
+            <p class="text-sm text-gray-600">Живий діалог у Telegram або WhatsApp вашою мовою. Жодних формальних тікетів і очікування відповіді добами.</p>
+          </article>
+        </div>
+
+        <blockquote class="mt-10 bg-[#F9FAFB] border-l-4 border-[#D11329] p-6 md:p-8 max-w-4xl mx-auto">
+          <p class="text-lg md:text-xl font-semibold text-gray-900 leading-relaxed">«Для нас успішна Sp. z o.o. клієнта — це спільний результат. Ви будуєте бізнес і масштабуєте продажі, а юридичну чистоту та фінансовий тил ми беремо на себе.»</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ PAIN vs SOLUTION ============ -->
+    <section class="bg-brand-tint py-14 md:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-4xl font-bold text-center mb-3">Типові проблеми власників Sp. z o.o.</h2>
+        <p class="text-center text-ink-muted mb-10">І як ми їх вирішуємо</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <!-- картки генеруються в JS з PAINS -->
+          <div id="pains" class="contents"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES + DORMANT PACKAGE ============ -->
+    <section class="py-14 md:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <div>
+            <h2 class="text-2xl md:text-4xl font-bold mb-2">Супровід Sp. z o.o.</h2>
+            <p class="text-ink-muted max-w-xl">Фахівці з України, Білорусі та Польщі</p>
+          </div>
+          <a href="https://maps.google.com/?cid=8662456915484114111" target="_blank" rel="noopener noreferrer" data-track="reviews" class="flex items-center gap-4 border border-brand-soft px-5 py-4 hover:border-brand transition shrink-0" title="Відкрити відгуки в Google Maps">
+            <span class="text-4xl font-extrabold">4.5</span>
+            <span><span class="block text-amber-500 text-lg leading-none" aria-hidden="true">★★★★☆</span><span class="text-sm font-semibold">64 відгуки в Google →</span></span>
+          </a>
+        </div>
+
+        <!-- Для блоку цитат вставте реальні відгуки клієнтів (за їхньою згодою) за шаблоном:
+             <figure class="border p-6"><blockquote>«…»</blockquote><figcaption>Ім'я, компанія, місто</figcaption></figure> -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Облік</p>
+            <h3 class="font-bold mb-2">Księgi rachunkowe</h3>
+            <p class="text-sm text-ink-muted">Повна бухгалтерія, CIT, JPK, VAT та VAT-UE, робота з фактурами в KSeF і банківськими виписками.</p>
+          </article>
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Річна звітність</p>
+            <h3 class="font-bold mb-2">Sprawozdanie finansowe до KRS</h3>
+            <p class="text-sm text-ink-muted">Готуємо річний звіт, CIT-8 та документи для затвердження, завчасно нагадуємо про терміни.</p>
+          </article>
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Правління</p>
+            <h3 class="font-bold mb-2">Виплати Zarząd і дивіденди</h3>
+            <p class="text-sm text-ink-muted">Підбираємо законну схему виплат, готуємо uchwały та розраховуємо податки й внески.</p>
+          </article>
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Зміна бухгалтера</p>
+            <h3 class="font-bold mb-2">Перехід посеред року</h3>
+            <p class="text-sm text-ink-muted">Приймаємо документи від попереднього бухгалтера, перевіряємо розрахунки та продовжуємо облік без перерви.</p>
+          </article>
+          <article class="border border-brand-soft p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Працівники</p>
+            <h3 class="font-bold mb-2">Кадри та зарплати</h3>
+            <p class="text-sm text-ink-muted">Umowa o pracę та zlecenie, реєстрація в ZUS, розрахунок зарплат і внесків.</p>
+          </article>
+          <!-- Пакет для «сплячих» компаній -->
+          <article class="bg-ink-dark text-white p-6 sm:col-span-2 lg:col-span-1 flex flex-col">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Окремий пакет</p>
+            <h3 class="font-bold text-lg mb-2">Sp. z o.o. без діяльності</h3>
+            <p class="text-sm text-white/70 mb-4">Компанія без обороту все одно зобов'язана вести облік і подавати звітність. Пакет супроводу для «сплячих» Sp. z o.o.: нульові декларації, річний звіт до KRS, CIT-8 та контроль термінів.</p>
+            <a href="#hero-form" data-track="cta" data-location="dormant_package" data-focus-form="hero-form" data-preset-status="new_or_dormant" class="mt-auto inline-block text-center bg-brand hover:bg-brand-hover text-white font-semibold px-5 py-3 border-2 border-brand transition">Дізнатися вартість пакета</a>
+          </article>
+        </div>
+
+        <div class="mt-10 bg-brand-tint border border-brand-soft p-6 md:p-8 grid sm:grid-cols-3 gap-6 text-center sm:text-left">
+          <div><p class="text-ink-muted text-xs uppercase tracking-wider mb-1">NIP</p><p class="font-bold text-lg">1133089152</p></div>
+          <div><p class="text-ink-muted text-xs uppercase tracking-wider mb-1">REGON</p><p class="font-bold text-lg">524697797</p></div>
+          <div><p class="text-ink-muted text-xs uppercase tracking-wider mb-1">Реєстр RDST</p><p class="font-bold text-lg">RDST-1861</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="bg-brand-tint py-14 md:py-20">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-2xl md:text-4xl font-bold text-center mb-10">Часті запитання про Sp. z o.o.</h2>
+        <div id="faq" class="space-y-3">
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Чи можна змінити бухгалтера Sp. z o.o. посеред року?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Так. Запитуємо в попереднього бухгалтера księgi rachunkowe та документи, перевіряємо нарахування CIT і VAT та продовжуємо облік із місяця переходу. Якщо попередній бухгалтер не виходить на зв'язок — підкажемо, як відновити облік.</p>
+          </details>
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Моя Sp. z o.o. не веде діяльності. Чи потрібна бухгалтерія?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Так — навіть компанія без обороту зобов'язана подавати річний звіт до KRS і декларації. Для таких Sp. z o.o. є окремий пакет супроводу з мінімальною кількістю операцій.</p>
+          </details>
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Як правлінню законно отримувати гроші з компанії?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Є кілька варіантів: дивіденди, винагорода члена правління на підставі uchwały або договору, а також інші форми — кожна має свої податки та внески. Підбираємо відповідну схему під вашу ситуацію та готуємо документи.</p>
+          </details>
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Як ви працюєте з KSeF?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Супровід KSeF входить у бухгалтерське обслуговування: допомагаємо налаштувати доступи та виставлення е-фактур, а вхідні фактури з KSeF враховуємо в бухгалтерії.</p>
+          </details>
+          <details class="bg-white border border-brand-soft">
+            <summary class="flex justify-between items-center gap-4 p-5 font-semibold cursor-pointer">Скільки триває реєстрація Sp. z o.o.?<span class="faq-icon text-brand text-2xl leading-none transition-transform">+</span></summary>
+            <p class="px-5 pb-5 text-ink-muted">Терміни залежать від способу реєстрації (онлайн через S24 чи традиційно) та розгляду заявки в KRS. На консультації назвемо орієнтовні терміни для вашого випадку та підготуємо документи, щоб уникнути повернень.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="bg-brand text-white py-14">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-2">Передайте бухгалтерію вашої Sp. z o.o. в IMOSTA</h2>
+          <p class="text-white/80">Комплексне ведення від 300 зл / міс. Консультація — безкоштовно.</p>
+        </div>
+        <a href="#bottom-form" data-track="cta" data-location="final" data-focus-form="bottom-form" class="bg-white text-brand font-bold px-8 py-4 border-2 border-white hover:bg-transparent hover:text-white transition">Залишити заявку</a>
+      </div>
+    </section>
+
+    <!-- ============ BOTTOM CONTACT FORM ============ -->
+    <section id="contact" class="py-14 md:py-20 bg-white">
+      <div class="max-w-xl mx-auto px-4">
+        <form id="bottom-form" data-form="bottom" data-source="Landing Page (UA)" class="lead-form scroll-mt-24 bg-white border border-brand-soft border-t-4 border-t-brand shadow-xl shadow-black/5 p-6 md:p-8" novalidate>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Бухгалтерія для вашої компанії</h2>
+          <p class="text-gray-600 mb-6">Залиште контакти — фахівець зв'яжеться з вами та відповість на всі запитання щодо обслуговування вашої Sp. z o.o.</p>
+
+          <label class="block text-sm font-medium mb-4">Ім'я
+            <input name="name" autocomplete="name" required minlength="2" class="mt-1.5 w-full border border-line px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+            <span class="err hidden text-xs text-brand mt-1">Вкажіть ім'я</span>
+          </label>
+          <label class="block text-sm font-medium mb-5">Телефон, Telegram або E-mail
+            <input name="contact" required autocomplete="tel" placeholder="+48 500 000 000, @username або email@domain.com" data-contact data-allow-email class="mt-1.5 w-full border border-line px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+            <span class="err hidden text-xs text-brand mt-1">Введіть номер телефону, @username або e-mail</span>
+          </label>
+          <button type="submit" class="w-full bg-brand hover:bg-brand-hover text-white text-lg font-bold py-4 border-2 border-brand hover:border-brand-hover transition disabled:opacity-60">Залишити заявку</button>
+          <p class="text-xs text-ink-muted mt-3">Без спаму. Натискаючи кнопку, ви погоджуєтеся на обробку персональних даних.</p>
+          <div class="success hidden mt-4 bg-brand-tint border border-brand-soft p-4 text-sm font-semibold">Дякуємо! Заявку прийнято — незабаром зв'яжемося.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-ink-dark text-white/70 py-10 text-sm">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+      <div>
+        <p class="text-white font-extrabold text-lg mb-2">IMOSTA<span class="text-brand"> Group</span></p>
+        <p>Бухгалтерські, юридичні та консультаційні послуги для бізнесу в Польщі.</p>
+      </div>
+      <address class="not-italic space-y-1">
+        <p><a href="https://maps.google.com/?cid=8662456915484114111" target="_blank" rel="noopener noreferrer" data-track="map" data-location="footer" class="text-white hover:text-brand underline decoration-white/30 underline-offset-4 hover:decoration-brand transition" title="Відкрити в Google Maps">ul. Ostrobramska 101/336, 04-041 Warszawa</a></p>
+        <p><a href="tel:+48573581162" data-track="call" data-location="footer" class="text-white hover:text-brand">+48 573 581 162</a></p>
+        <p><a href="mailto:info@imosta.pl" data-track="email" data-location="footer" class="text-white hover:text-brand">info@imosta.pl</a></p>
+      </address>
+      <div class="space-y-1">
+        <p>NIP 1133089152 · REGON 524697797</p>
+        <p>Номер у реєстрі RDST-1861</p>
+        <p class="text-white/50 text-xs pt-2">IMOSTA Group не є державним органом і не представляє KRS, Urząd Skarbowy чи ZUS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE STICKY BAR ============ -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-line grid grid-cols-2 gap-2 p-2 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+    <a href="tel:+48573581162" data-track="call" data-location="mobile_bar" class="flex items-center justify-center gap-2 border-2 border-brand text-brand font-bold py-3">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      Зателефонувати
+    </a>
+    <a href="https://t.me/IMOSTA_bot" target="_blank" rel="noopener noreferrer" data-track="telegram" data-location="mobile_bar" class="flex items-center justify-center gap-2 bg-brand text-white font-bold py-3 border-2 border-brand">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3.1c.9-.3 1.6.2 1.4 1.2z"/></svg>
+      Telegram
+    </a>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* ---------- Config ---------- */
+    var LEAD_ENDPOINT = '/api/send-lead';
+    var THANK_YOU_URL = '/thank-you.html?lang=ua';
+    var LANDING_TYPE = 'Spółka z o.o.';
+
+    var PAINS = [
+      ['Блокування та санкції через неподані звіти до KRS', 'Sprawozdanie finansowe не подано вчасно — починаються проблеми з банком, штрафи та питання до правління.',
+       'Готуємо та подаємо річну звітність до KRS і US вчасно, завчасно нагадуємо про кожен дедлайн.'],
+      ['Незрозуміло, як законно вивести гроші з компанії', 'Дивіденди, винагорода правління, позики — страшно помилитися з податками.',
+       'Підбираємо законну схему виплат правлінню та власникам, готуємо uchwały і рахуємо податки.'],
+      ['Польський бухгалтер не виходить на зв\'язок', 'Запитання залишаються без відповіді, а терміни CIT і VAT наближаються.',
+       'Персональний бухгалтер на зв\'язку в зручному месенджері. Приймаємо облік навіть посеред року.'],
+      ['Мовний бар\'єр', 'Листи з urzędu та польські терміни без пояснень.',
+       'Пояснюємо процедури простою мовою українською, російською, англійською та польською.']
+    ];
+
+    /* ---------- Tracking ---------- */
+    function track(event, params) {
+      window.dataLayer.push(Object.assign({ event: event, landing_type: LANDING_TYPE }, params || {}));
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('[data-track]');
+      if (!el) return;
+      var type = el.getAttribute('data-track');
+      var map = { call: 'contact_click', telegram: 'contact_click', email: 'contact_click', cta: 'cta_click', reviews: 'reviews_click', map: 'map_click' };
+      track(map[type] || 'click', { contact_type: type, location: el.getAttribute('data-location') || '' });
+    });
+
+    /* ---------- Pain/solution render ---------- */
+    var painsEl = document.getElementById('pains');
+    PAINS.forEach(function (p) {
+      var card = document.createElement('div');
+      card.className = 'bg-white border border-brand-soft grid grid-rows-[auto_1fr]';
+      card.innerHTML =
+        '<div class="p-5 border-b border-brand-soft"><p class="text-xs font-bold uppercase tracking-wider text-ink-muted mb-1">Проблема</p>' +
+        '<h3 class="font-bold text-lg mb-1">✕ ' + p[0] + '</h3><p class="text-sm text-ink-muted">' + p[1] + '</p></div>' +
+        '<div class="p-5 bg-white"><p class="text-xs font-bold uppercase tracking-wider text-brand mb-1">Рішення IMOSTA</p>' +
+        '<p class="font-medium">✓ ' + p[2] + '</p></div>';
+      painsEl.appendChild(card);
+    });
+
+    /* ---------- Phone / Telegram validation & mask ---------- */
+    function digits(s) { return s.replace(/\D/g, ''); }
+
+    function formatPhone(raw, final) {
+      var d = digits(raw);
+      var plus = raw.trim().startsWith('+');
+      if (!d) return plus ? '+' : '';
+      if (!plus) {
+        // Без «+»: під час набору лише групуємо цифри, код країни підставляємо на blur
+        if (final && d.length === 9) d = '48' + d;
+        else if (!(final && d.length === 11 && d.startsWith('48'))) return d.slice(0, 15).replace(/(\d{3})(?=\d)/g, '$1 ');
+      }
+      if (d.startsWith('48')) {
+        var n = d.slice(2, 11);
+        return ('+48 ' + [n.slice(0, 3), n.slice(3, 6), n.slice(6, 9)].filter(Boolean).join(' ')).trim();
+      }
+      return '+' + d.slice(0, 15); // міжнародний, E.164
+    }
+
+    function parseContact(value, allowEmail) {
+      var v = value.trim();
+      if (v.indexOf('@') > 0) {
+        var isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) && v.length <= 254;
+        return { valid: !!allowEmail && isEmail, type: 'email', value: v.toLowerCase() };
+      }
+      if (/^@?[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(v)) {
+        return { valid: true, type: 'telegram', value: '@' + v.replace(/^@/, '') };
+      }
+      var d = digits(v);
+      if (!v.startsWith('+') && d.length === 9) d = '48' + d;
+      if (d.startsWith('48')) return { valid: d.length === 11, type: 'phone', value: '+' + d };
+      return { valid: d.length >= 8 && d.length <= 15 && (v.startsWith('+') || d.length > 9), type: 'phone', value: '+' + d };
+    }
+
+    document.querySelectorAll('[data-contact]').forEach(function (input) {
+      input.addEventListener('input', function () {
+        // Маска застосовується лише якщо вводять номер, а не @username
+        if (/^[\d\s+()-]+$/.test(input.value)) input.value = formatPhone(input.value);
+        setError(input, false);
+      });
+      input.addEventListener('blur', function () {
+        if (/^[\d\s+()-]+$/.test(input.value)) input.value = formatPhone(input.value, true);
+      });
+    });
+
+    function setError(input, on) {
+      input.classList.toggle('field-error', on);
+      var err = input.parentElement.querySelector('.err');
+      if (err) err.classList.toggle('hidden', !on);
+      input.setAttribute('aria-invalid', on ? 'true' : 'false');
+    }
+
+    /* ---------- Lead submission ---------- */
+    function submitLead(form, extra) {
+      var data = { landing_type: LANDING_TYPE, form_id: form.getAttribute('data-form'), source: form.getAttribute('data-source') || '', page: location.href, lang: 'uk' };
+      var ok = true;
+
+      var name = form.querySelector('[name="name"]');
+      if (name) {
+        var nameOk = name.value.trim().length >= 2;
+        setError(name, !nameOk); ok = ok && nameOk;
+        data.name = name.value.trim();
+      }
+      var contactInput = form.querySelector('[name="contact"]');
+      var contact = parseContact(contactInput.value, contactInput.hasAttribute('data-allow-email'));
+      setError(contactInput, !contact.valid); ok = ok && contact.valid;
+      data.contact = contact.value; data.contact_type = contact.type;
+
+      var st = form.querySelector('[name="company_status"]:checked');
+      if (st) data.company_status = st.value;
+      Object.assign(data, extra || {});
+      data.landing_type = LANDING_TYPE; // завжди, навіть якщо extra містить це поле
+
+      if (!ok) {
+        track('form_error', { form_id: data.form_id });
+        var firstErr = form.querySelector('.field-error');
+        if (firstErr) firstErr.focus();
+        return;
+      }
+
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Надсилання…';
+      btn.setAttribute('aria-busy', 'true');
+
+      fetch(LEAD_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          btn.textContent = 'Надіслано ✓';
+          btn.removeAttribute('aria-busy');
+          form.querySelector('.success').classList.remove('hidden');
+          // PII (ім'я, телефон) у GA4 не передаємо — лише параметри заявки
+          track('generate_lead', { form_id: data.form_id, contact_type: data.contact_type, company_status: data.company_status || '' });
+          // Невелика пауза, щоб теги GTM встигли надіслати подію до переходу
+          setTimeout(function () { location.href = THANK_YOU_URL; }, 400);
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = label;
+          btn.removeAttribute('aria-busy');
+          track('form_submit_failed', { form_id: data.form_id });
+          alert('Не вдалося надіслати заявку. Зателефонуйте нам: +48 573 581 162');
+        });
+    }
+
+    ['hero-form', 'bottom-form'].forEach(function (id) {
+      document.getElementById(id).addEventListener('submit', function (e) {
+        e.preventDefault(); submitLead(this);
+      });
+    });
+
+    // CTA-кнопки з data-focus-form: плавний скрол до форми та фокус на першому полі.
+    // data-preset-status заздалегідь обирає статус компанії у формі.
+    document.querySelectorAll('[data-focus-form]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        var form = document.getElementById(el.getAttribute('data-focus-form'));
+        if (!form) return;
+        e.preventDefault();
+        var preset = el.getAttribute('data-preset-status');
+        var radio = preset && form.querySelector('[name="company_status"][value="' + preset + '"]');
+        if (radio) radio.checked = true;
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var input = form.querySelector('input:not([type="hidden"])');
+        if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 450);
+      });
+    });
+
+    /* ---------- FAQ: одна відкрита вкладка ---------- */
+    var faqs = document.querySelectorAll('#faq details');
+    faqs.forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (!d.open) return;
+        faqs.forEach(function (o) { if (o !== d) o.open = false; });
+        track('faq_open', { question: d.querySelector('summary').textContent.replace('+', '').trim() });
+      });
+    });
+
+  })();
+  </script>
+</body>
+</html>
