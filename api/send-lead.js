@@ -6,7 +6,7 @@ const LANDING_TYPE = 'Spółka z o.o.';
 const MAX_BODY_BYTES = 10 * 1024;
 
 const LABELS = {
-  form_id: { hero: 'Форма на первом экране', quiz: 'Калькулятор' },
+  form_id: { hero: 'Форма на первом экране', quiz: 'Калькулятор', bottom: 'Форма внизу страницы' },
   company_status: {
     active: 'Активная / действующая',
     new_or_dormant: 'Новая / без деятельности',
@@ -29,9 +29,12 @@ function clean(value, max = 200) {
   return String(value).replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, max);
 }
 
-// Та же логика, что и на клиенте: номер (PL или международный) либо Telegram @username
+// Та же логика, что и на клиенте: номер (PL или международный), Telegram @username или e-mail
 function parseContact(raw) {
-  const v = clean(raw, 64);
+  const v = clean(raw, 254);
+  if (v.indexOf('@') > 0) {
+    return { valid: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v), type: 'email', value: v.toLowerCase() };
+  }
   if (/^@?[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(v)) {
     return { valid: true, type: 'telegram', value: '@' + v.replace(/^@/, '') };
   }
@@ -59,11 +62,13 @@ function buildMessage(lead, contact) {
   if (contact.type === 'telegram') {
     const handle = contact.value.slice(1);
     lines.push(`<b>Telegram:</b> <a href="https://t.me/${handle}">${escapeHtml(contact.value)}</a>`);
+  } else if (contact.type === 'email') {
+    lines.push(`<b>E-mail:</b> ${escapeHtml(contact.value)}`);
   } else {
     lines.push(`<b>Телефон:</b> ${escapeHtml(contact.value)}`);
   }
   if (lead.company_status) lines.push(`<b>Статус компании:</b> ${escapeHtml(label('company_status', lead.company_status))}`);
-  lines.push(`<b>Источник:</b> ${escapeHtml(label('form_id', lead.form_id))}`);
+  lines.push(`<b>Источник:</b> ${escapeHtml(label('form_id', lead.form_id))}${lead.source ? ` (${escapeHtml(lead.source)})` : ''}`);
 
   if (lead.form_id === 'quiz') {
     lines.push('', '<b>Расчёт из калькулятора</b>');
@@ -101,6 +106,7 @@ module.exports = async function handler(req, res) {
   const lead = {
     name: clean(body.name, 100),
     form_id: clean(body.form_id, 20) || 'unknown',
+    source: clean(body.source, 40),
     company_status: clean(body.company_status, 30),
     invoices: clean(body.invoices, 20),
     extras: Array.isArray(body.extras) ? body.extras.slice(0, 10).map((x) => clean(x, 20)).filter(Boolean) : [],
@@ -108,7 +114,7 @@ module.exports = async function handler(req, res) {
     estimate_one_time: toNumber(body.estimate_one_time),
     page: clean(body.page, 300),
   };
-  if (lead.form_id === 'hero' && lead.name.length < 2) {
+  if ((lead.form_id === 'hero' || lead.form_id === 'bottom') && lead.name.length < 2) {
     return res.status(422).json({ ok: false, error: 'invalid_name' });
   }
 

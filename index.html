@@ -62,7 +62,7 @@
           +48 573 581 162
         </a>
         <a href="https://t.me/+48573581162" target="_blank" rel="noopener" data-track="telegram" data-location="header" class="hidden lg:inline-flex font-semibold text-ink-muted hover:text-brand">Telegram</a>
-        <a href="#calc" data-track="cta" data-location="header" class="hidden sm:inline-flex bg-brand hover:bg-brand-hover text-white text-sm font-semibold px-4 py-2.5 border-2 border-brand hover:border-brand-hover transition">Рассчитать стоимость</a>
+        <a href="#hero-form" data-track="cta" data-location="header" data-focus-form="hero-form" class="hidden sm:inline-flex bg-brand hover:bg-brand-hover text-white text-sm font-semibold px-4 py-2.5 border-2 border-brand hover:border-brand-hover transition">Оставить заявку</a>
       </div>
     </div>
   </header>
@@ -106,7 +106,7 @@
         </div>
 
         <!-- Hero lead form -->
-        <form id="hero-form" data-form="hero" class="lead-form bg-white border border-brand-soft border-t-4 border-t-brand shadow-xl shadow-black/5 p-6 md:p-7" novalidate>
+        <form id="hero-form" data-form="hero" data-source="Hero Form" class="lead-form scroll-mt-24 bg-white border border-brand-soft border-t-4 border-t-brand shadow-xl shadow-black/5 p-6 md:p-7" novalidate>
           <h2 class="text-xl font-bold mb-1">Расчет для вашей Sp. z o.o.</h2>
           <p class="text-sm text-ink-muted mb-5">Специалист свяжется в рабочее время и назовёт стоимость обслуживания</p>
 
@@ -125,7 +125,7 @@
               <label class="opt cursor-pointer"><input type="radio" name="company_status" value="new_or_dormant" class="sr-only"><span class="flex items-center justify-center text-center h-full border border-line px-2 py-2.5 font-semibold text-sm leading-tight">Новая / Без деятельности</span></label>
             </div>
           </fieldset>
-          <button type="submit" class="w-full bg-brand hover:bg-brand-hover text-white font-bold py-4 border-2 border-brand hover:border-brand-hover transition disabled:opacity-60">Получить расчет для Sp. z o.o.</button>
+          <button type="submit" class="w-full bg-brand hover:bg-brand-hover text-white font-bold py-4 border-2 border-brand hover:border-brand-hover transition disabled:opacity-60">Отправить</button>
           <p class="text-xs text-ink-muted mt-3">Без спама. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
           <div class="success hidden mt-4 bg-brand-tint border border-brand-soft p-4 text-sm font-semibold">Спасибо! Заявка принята — скоро свяжемся.</div>
         </form>
@@ -184,7 +184,7 @@
               <p id="quiz-onetime" class="text-sm text-ink-muted mb-1 hidden"></p>
               <p class="text-xs text-ink-muted mb-6">Цены нетто, ориентировочно. Точная стоимость фиксируется в официальном предложении.</p>
 
-              <form id="quiz-form" data-form="quiz" class="lead-form bg-brand-tint border border-brand-soft p-5" novalidate>
+              <form id="quiz-form" data-form="quiz" data-source="Quiz" class="lead-form bg-brand-tint border border-brand-soft p-5" novalidate>
                 <p class="font-semibold mb-3">Зафиксируйте цену и получите официальное КП в PDF</p>
                 <div class="flex flex-col sm:flex-row gap-3">
                   <label class="flex-1">
@@ -317,6 +317,28 @@
         <a href="#calc" data-track="cta" data-location="final" class="bg-white text-brand font-bold px-8 py-4 border-2 border-white hover:bg-transparent hover:text-white transition">Рассчитать стоимость</a>
       </div>
     </section>
+
+    <!-- ============ BOTTOM CONTACT FORM ============ -->
+    <section id="contact" class="py-14 md:py-20 bg-white">
+      <div class="max-w-xl mx-auto px-4">
+        <form id="bottom-form" data-form="bottom" data-source="Bottom Form" class="lead-form bg-white border border-brand-soft border-t-4 border-t-brand shadow-xl shadow-black/5 p-6 md:p-8" novalidate>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Бухгалтерия для вашей компании</h2>
+          <p class="text-gray-600 mb-6">Оставьте контакты — специалист свяжется с вами и ответит на все вопросы по обслуживанию вашей Sp. z o.o.</p>
+
+          <label class="block text-sm font-medium mb-4">Имя
+            <input name="name" autocomplete="name" required minlength="2" class="mt-1.5 w-full border border-line px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+            <span class="err hidden text-xs text-brand mt-1">Укажите имя</span>
+          </label>
+          <label class="block text-sm font-medium mb-5">Телефон, Telegram или E-mail
+            <input name="contact" required autocomplete="tel" placeholder="+48 500 000 000, @username или email@domain.com" data-contact data-allow-email class="mt-1.5 w-full border border-line px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+            <span class="err hidden text-xs text-brand mt-1">Введите номер телефона, @username или e-mail</span>
+          </label>
+          <button type="submit" class="w-full bg-brand hover:bg-brand-hover text-white text-lg font-bold py-4 border-2 border-brand hover:border-brand-hover transition disabled:opacity-60">Отправить</button>
+          <p class="text-xs text-ink-muted mt-3">Без спама. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+          <div class="success hidden mt-4 bg-brand-tint border border-brand-soft p-4 text-sm font-semibold">Спасибо! Заявка принята — скоро свяжемся.</div>
+        </form>
+      </div>
+    </section>
   </main>
 
   <!-- ============ FOOTER ============ -->
@@ -429,8 +451,12 @@
       return '+' + d.slice(0, 15); // международный, E.164
     }
 
-    function parseContact(value) {
+    function parseContact(value, allowEmail) {
       var v = value.trim();
+      if (v.indexOf('@') > 0) {
+        var isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) && v.length <= 254;
+        return { valid: !!allowEmail && isEmail, type: 'email', value: v.toLowerCase() };
+      }
       if (/^@?[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(v)) {
         return { valid: true, type: 'telegram', value: '@' + v.replace(/^@/, '') };
       }
@@ -460,7 +486,7 @@
 
     /* ---------- Lead submission ---------- */
     function submitLead(form, extra) {
-      var data = { landing_type: LANDING_TYPE, form_id: form.getAttribute('data-form'), page: location.href, lang: 'ru' };
+      var data = { landing_type: LANDING_TYPE, form_id: form.getAttribute('data-form'), source: form.getAttribute('data-source') || '', page: location.href, lang: 'ru' };
       var ok = true;
 
       var name = form.querySelector('[name="name"]');
@@ -470,7 +496,7 @@
         data.name = name.value.trim();
       }
       var contactInput = form.querySelector('[name="contact"]');
-      var contact = parseContact(contactInput.value);
+      var contact = parseContact(contactInput.value, contactInput.hasAttribute('data-allow-email'));
       setError(contactInput, !contact.valid); ok = ok && contact.valid;
       data.contact = contact.value; data.contact_type = contact.type;
 
@@ -487,24 +513,45 @@
       }
 
       var btn = form.querySelector('button[type="submit"]');
+      var label = btn.textContent;
       btn.disabled = true;
+      btn.textContent = 'Отправка…';
+      btn.setAttribute('aria-busy', 'true');
 
       fetch(LEAD_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
         .then(function (r) {
           if (!r.ok) throw new Error(r.status);
+          btn.textContent = 'Отправлено ✓';
+          btn.removeAttribute('aria-busy');
           form.querySelector('.success').classList.remove('hidden');
           // PII (имя, телефон) в GA4 не передаём — только параметры заявки
           track('generate_lead', { form_id: data.form_id, contact_type: data.contact_type, company_status: data.company_status || '', value: data.estimate_monthly || 0, currency: 'PLN' });
         })
         .catch(function () {
           btn.disabled = false;
+          btn.textContent = label;
+          btn.removeAttribute('aria-busy');
           track('form_submit_failed', { form_id: data.form_id });
           alert('Не удалось отправить заявку. Позвоните нам: +48 573 581 162');
         });
     }
 
-    document.getElementById('hero-form').addEventListener('submit', function (e) {
-      e.preventDefault(); submitLead(this);
+    ['hero-form', 'bottom-form'].forEach(function (id) {
+      document.getElementById(id).addEventListener('submit', function (e) {
+        e.preventDefault(); submitLead(this);
+      });
+    });
+
+    // Кнопка «Оставить заявку» в шапке: плавный скролл к форме и фокус на первом поле
+    document.querySelectorAll('[data-focus-form]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        var form = document.getElementById(el.getAttribute('data-focus-form'));
+        if (!form) return;
+        e.preventDefault();
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var input = form.querySelector('input:not([type="hidden"])');
+        if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 450);
+      });
     });
 
     /* ---------- Quiz ---------- */
