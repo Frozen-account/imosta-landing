@@ -173,81 +173,6 @@
       </div>
     </section>
 
-    <!-- ============ CALCULATOR / QUIZ ============ -->
-    <section id="calc" class="scroll-mt-20 py-14 md:py-20">
-      <div class="max-w-3xl mx-auto px-4">
-        <p class="text-brand font-semibold uppercase tracking-wider text-sm text-center mb-2">Калькулятор Sp. z o.o.</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-center mb-3">Рассчитайте стоимость обслуживания</h2>
-        <p class="text-center text-ink-muted mb-8">Тарифы от 300 zł в месяц. 3 вопроса — и предварительная смета на экране</p>
-
-        <div id="quiz" class="border border-brand-soft shadow-xl shadow-black/5">
-          <div class="h-1.5 bg-brand-soft"><div id="quiz-bar" class="h-full bg-brand transition-all duration-300" style="width:25%"></div></div>
-          <div class="p-6 md:p-8">
-            <p id="quiz-counter" class="text-sm text-ink-muted font-medium mb-2">Шаг 1 из 3</p>
-
-            <div class="quiz-step" data-step="1">
-              <h3 class="text-xl font-bold mb-5">Статус фирмы</h3>
-              <div class="grid sm:grid-cols-3 gap-3">
-                <label class="opt cursor-pointer"><input type="radio" name="q_status" value="active" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">Активная</b><span class="text-sm text-ink-muted">Есть обороты и операции</span></span></label>
-                <label class="opt cursor-pointer"><input type="radio" name="q_status" value="dormant" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">«Спящая»</b><span class="text-sm text-ink-muted">Без операций и оборотов</span></span></label>
-                <label class="opt cursor-pointer"><input type="radio" name="q_status" value="registering" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">В процессе регистрации</b><span class="text-sm text-ink-muted">Регистрация в KRS + бухгалтерия</span></span></label>
-              </div>
-            </div>
-
-            <div class="quiz-step hidden" data-step="2">
-              <h3 class="text-xl font-bold mb-5">Количество фактур в месяц</h3>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <label class="opt cursor-pointer"><input type="radio" name="q_docs" value="0-15" class="sr-only"><span class="block border border-line p-4 text-center font-bold text-lg">до 15</span></label>
-                <label class="opt cursor-pointer"><input type="radio" name="q_docs" value="15-30" class="sr-only"><span class="block border border-line p-4 text-center font-bold text-lg">15–30</span></label>
-                <label class="opt cursor-pointer"><input type="radio" name="q_docs" value="30-60" class="sr-only"><span class="block border border-line p-4 text-center font-bold text-lg">30–60</span></label>
-                <label class="opt cursor-pointer"><input type="radio" name="q_docs" value="60+" class="sr-only"><span class="block border border-line p-4 text-center font-bold text-lg">60+</span></label>
-              </div>
-            </div>
-
-            <div class="quiz-step hidden" data-step="3">
-              <h3 class="text-xl font-bold mb-1">Дополнительно</h3>
-              <p class="text-sm text-ink-muted mb-5">Можно выбрать несколько или пропустить</p>
-              <div class="grid sm:grid-cols-3 gap-3">
-                <label class="opt cursor-pointer"><input type="checkbox" name="q_extra" value="vat" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">VAT / VAT-UE</b><span class="text-sm text-ink-muted">Регистрация и ведение</span></span></label>
-                <label class="opt cursor-pointer"><input type="checkbox" name="q_extra" value="staff" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">Наемные сотрудники</b><span class="text-sm text-ink-muted">Umowa o pracę / zlecenie</span></span></label>
-                <label class="opt cursor-pointer"><input type="checkbox" name="q_extra" value="office" class="sr-only"><span class="block border border-line p-4 h-full"><b class="block">Виртуальный офис</b><span class="text-sm text-ink-muted">Адрес в Варшаве + корреспонденция</span></span></label>
-              </div>
-            </div>
-
-            <!-- Result -->
-            <div class="quiz-step hidden" data-step="4">
-              <h3 class="text-xl font-bold mb-4">Предварительная смета для Sp. z o.o.</h3>
-              <ul id="quiz-breakdown" class="divide-y divide-line border-y border-line mb-4 text-sm"></ul>
-              <div class="flex items-baseline justify-between mb-1">
-                <span class="font-semibold">Итого в месяц</span>
-                <span class="text-3xl font-extrabold text-brand"><span id="quiz-total">—</span> zł</span>
-              </div>
-              <p id="quiz-onetime" class="text-sm text-ink-muted mb-1 hidden"></p>
-              <p class="text-xs text-ink-muted mb-6">Цены нетто, ориентировочно. Точная стоимость фиксируется в официальном предложении.</p>
-
-              <form id="quiz-form" data-form="quiz" data-source="Quiz" class="lead-form bg-brand-tint border border-brand-soft p-5" novalidate>
-                <p class="font-semibold mb-3">Зафиксируйте цену и получите официальное КП в PDF</p>
-                <div class="flex flex-col sm:flex-row gap-3">
-                  <label class="flex-1">
-                    <span class="sr-only">Телефон или Telegram</span>
-                    <input name="contact" required inputmode="tel" placeholder="+48 500 000 000 или @username" data-contact class="w-full border border-line bg-white px-3.5 py-3 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
-                    <span class="err hidden text-xs text-brand mt-1">Введите номер или @username</span>
-                  </label>
-                  <button type="submit" class="bg-brand hover:bg-brand-hover text-white font-bold px-6 py-3 border-2 border-brand hover:border-brand-hover transition disabled:opacity-60 self-start">Получить КП в PDF</button>
-                </div>
-                <div class="success hidden mt-4 font-semibold text-sm">Готово! Отправим предложение в выбранный канал в рабочее время.</div>
-              </form>
-            </div>
-
-            <div class="flex justify-between items-center mt-8">
-              <button id="quiz-back" type="button" class="text-sm font-semibold text-ink-muted hover:text-brand invisible">← Назад</button>
-              <button id="quiz-next" type="button" disabled class="bg-brand hover:bg-brand-hover text-white font-semibold px-6 py-3 border-2 border-brand transition disabled:opacity-40 disabled:cursor-not-allowed">Далее →</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ PAIN vs SOLUTION ============ -->
     <section class="bg-brand-tint py-14 md:py-20">
       <div class="max-w-6xl mx-auto px-4">
@@ -307,7 +232,7 @@
             <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Отдельный пакет</p>
             <h3 class="font-bold text-lg mb-2">Sp. z o.o. без деятельности</h3>
             <p class="text-sm text-white/70 mb-4">Компания без оборотов всё равно обязана вести учёт и сдавать отчётность. Пакет сопровождения для «спящих» Sp. z o.o.: нулевые декларации, годовой отчёт в KRS, CIT-8 и контроль сроков.</p>
-            <a href="#calc" data-track="cta" data-location="dormant_package" data-preset="dormant" class="mt-auto inline-block text-center bg-brand hover:bg-brand-hover text-white font-semibold px-5 py-3 border-2 border-brand transition">Рассчитать пакет</a>
+            <a href="#hero-form" data-track="cta" data-location="dormant_package" data-focus-form="hero-form" data-preset-status="new_or_dormant" class="mt-auto inline-block text-center bg-brand hover:bg-brand-hover text-white font-semibold px-5 py-3 border-2 border-brand transition">Узнать стоимость пакета</a>
           </article>
         </div>
 
@@ -353,16 +278,16 @@
       <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div>
           <h2 class="text-2xl md:text-3xl font-bold mb-2">Передайте бухгалтерию вашей Sp. z o.o. в IMOSTA</h2>
-          <p class="text-white/80">Комплексное ведение от 300 zł / мес. Расчёт — за минуту, консультация — бесплатно.</p>
+          <p class="text-white/80">Комплексное ведение от 300 zł / мес. Консультация — бесплатно.</p>
         </div>
-        <a href="#calc" data-track="cta" data-location="final" class="bg-white text-brand font-bold px-8 py-4 border-2 border-white hover:bg-transparent hover:text-white transition">Рассчитать стоимость</a>
+        <a href="#bottom-form" data-track="cta" data-location="final" data-focus-form="bottom-form" class="bg-white text-brand font-bold px-8 py-4 border-2 border-white hover:bg-transparent hover:text-white transition">Оставить заявку</a>
       </div>
     </section>
 
     <!-- ============ BOTTOM CONTACT FORM ============ -->
     <section id="contact" class="py-14 md:py-20 bg-white">
       <div class="max-w-xl mx-auto px-4">
-        <form id="bottom-form" data-form="bottom" data-source="Bottom Form" class="lead-form bg-white border border-brand-soft border-t-4 border-t-brand shadow-xl shadow-black/5 p-6 md:p-8" novalidate>
+        <form id="bottom-form" data-form="bottom" data-source="Bottom Form" class="lead-form scroll-mt-24 bg-white border border-brand-soft border-t-4 border-t-brand shadow-xl shadow-black/5 p-6 md:p-8" novalidate>
           <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Бухгалтерия для вашей компании</h2>
           <p class="text-gray-600 mb-6">Оставьте контакты — специалист свяжется с вами и ответит на все вопросы по обслуживанию вашей Sp. z o.o.</p>
 
@@ -421,21 +346,6 @@
     /* ---------- Config ---------- */
     var LEAD_ENDPOINT = '/api/send-lead';
     var LANDING_TYPE = 'Spółka z o.o.';
-
-    // ВНИМАНИЕ: цены-заглушки. Замените на актуальный прайс IMOSTA перед запуском.
-    var PRICING = {
-      base:  { active: 300, dormant: 300, registering: 300 },           // zł/мес, стартовый тариф Sp. z o.o. «от 300 zł»
-      docs:  { '0-15': 0, '15-30': 200, '30-60': 450, '60+': 800 },     // надбавка за объём фактур
-      extra: { vat: { label: 'Регистрация VAT / VAT-UE', oneTime: 400 },
-               staff: { label: 'Кадры и зарплаты (от 1 сотрудника)', monthly: 120 },
-               office: { label: 'Виртуальный офис в Варшаве', monthly: 150 } },
-      registration: 1500                                                  // разово, «В процессе регистрации»
-    };
-
-    var LABELS = {
-      status: { active: 'активная Sp. z o.o.', dormant: 'Sp. z o.o. без деятельности', registering: 'новая Sp. z o.o.' },
-      docs: { '0-15': 'до 15', '15-30': '15–30', '30-60': '30–60', '60+': '60+' }
-    };
 
     var PAINS = [
       ['Блокировки и санкции из-за несданных отчётов в KRS', 'Sprawozdanie finansowe не подано вовремя — начинаются проблемы с банком, штрафы и вопросы к правлению.',
@@ -566,7 +476,7 @@
           btn.removeAttribute('aria-busy');
           form.querySelector('.success').classList.remove('hidden');
           // PII (имя, телефон) в GA4 не передаём — только параметры заявки
-          track('generate_lead', { form_id: data.form_id, contact_type: data.contact_type, company_status: data.company_status || '', value: data.estimate_monthly || 0, currency: 'PLN' });
+          track('generate_lead', { form_id: data.form_id, contact_type: data.contact_type, company_status: data.company_status || '' });
         })
         .catch(function () {
           btn.disabled = false;
@@ -583,106 +493,20 @@
       });
     });
 
-    // Кнопка «Оставить заявку» в шапке: плавный скролл к форме и фокус на первом поле
+    // CTA-кнопки с data-focus-form: плавный скролл к форме и фокус на первом поле.
+    // data-preset-status заранее выбирает статус компании в форме.
     document.querySelectorAll('[data-focus-form]').forEach(function (el) {
       el.addEventListener('click', function (e) {
         var form = document.getElementById(el.getAttribute('data-focus-form'));
         if (!form) return;
         e.preventDefault();
+        var preset = el.getAttribute('data-preset-status');
+        var radio = preset && form.querySelector('[name="company_status"][value="' + preset + '"]');
+        if (radio) radio.checked = true;
         form.scrollIntoView({ behavior: 'smooth', block: 'start' });
         var input = form.querySelector('input:not([type="hidden"])');
         if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 450);
       });
-    });
-
-    /* ---------- Quiz ---------- */
-    var step = 1, TOTAL = 3, started = false;
-    var steps = document.querySelectorAll('.quiz-step');
-    var nextBtn = document.getElementById('quiz-next');
-    var backBtn = document.getElementById('quiz-back');
-    var quiz = document.getElementById('quiz');
-
-    function answer(name) {
-      var el = quiz.querySelector('[name="' + name + '"]:checked');
-      return el ? el.value : null;
-    }
-    function extras() {
-      return Array.prototype.map.call(quiz.querySelectorAll('[name="q_extra"]:checked'), function (el) { return el.value; });
-    }
-
-    function render() {
-      steps.forEach(function (s) { s.classList.toggle('hidden', +s.dataset.step !== step); });
-      document.getElementById('quiz-bar').style.width = (step / (TOTAL + 1) * 100) + '%';
-      document.getElementById('quiz-counter').textContent = step <= TOTAL ? 'Шаг ' + step + ' из ' + TOTAL : 'Результат';
-      backBtn.classList.toggle('invisible', step === 1);
-      nextBtn.classList.toggle('hidden', step > TOTAL);
-      nextBtn.textContent = step === TOTAL ? 'Показать смету →' : 'Далее →';
-      nextBtn.disabled = (step === 1 && !answer('q_status')) || (step === 2 && !answer('q_docs'));
-    }
-
-    function calc() {
-      var status = answer('q_status'), docs = answer('q_docs'), ex = extras();
-      var rows = [], monthly = 0, oneTime = 0;
-      var base = PRICING.base[status];
-      rows.push(['Бухгалтерия: ' + LABELS.status[status], base]); monthly += base;
-      if (PRICING.docs[docs]) { rows.push(['Фактуры: ' + LABELS.docs[docs] + ' / мес', PRICING.docs[docs]]); monthly += PRICING.docs[docs]; }
-      ex.forEach(function (k) {
-        var x = PRICING.extra[k];
-        if (x.monthly) { rows.push([x.label, x.monthly]); monthly += x.monthly; }
-        if (x.oneTime) { rows.push([x.label + ' (разово)', x.oneTime, true]); oneTime += x.oneTime; }
-      });
-      if (status === 'registering') { rows.push(['Сопровождение регистрации в KRS (разово)', PRICING.registration, true]); oneTime += PRICING.registration; }
-      return { rows: rows, monthly: monthly, oneTime: oneTime, status: status, docs: docs, extras: ex };
-    }
-
-    function showResult() {
-      var r = calc();
-      document.getElementById('quiz-breakdown').innerHTML = r.rows.map(function (row) {
-        return '<li class="flex justify-between gap-4 py-2.5"><span>' + row[0] + '</span><span class="font-semibold whitespace-nowrap">' +
-          row[1] + ' zł' + (row[2] ? '' : '/мес') + '</span></li>';
-      }).join('');
-      document.getElementById('quiz-total').textContent = 'от ' + r.monthly;
-      var ot = document.getElementById('quiz-onetime');
-      ot.classList.toggle('hidden', !r.oneTime);
-      ot.textContent = 'Разовые услуги: ' + r.oneTime + ' zł';
-      track('quiz_complete', { company_status: r.status, invoices: r.docs, extras: r.extras.join(','), value: r.monthly, currency: 'PLN' });
-    }
-
-    quiz.addEventListener('change', function (e) {
-      if (!started) { started = true; track('quiz_start'); }
-      render();
-      // Авто-переход на одиночном выборе — меньше кликов
-      if (e.target.type === 'radio' && e.target.name.startsWith('q_') && step < TOTAL) {
-        setTimeout(goNext, 250);
-      }
-    });
-
-    function goNext() {
-      if (nextBtn.disabled) return;
-      track('quiz_step', { step: step });
-      step++;
-      if (step > TOTAL) showResult();
-      render();
-    }
-    nextBtn.addEventListener('click', goNext);
-    backBtn.addEventListener('click', function () { step = Math.max(1, step - 1); render(); });
-
-    // Кнопка «Рассчитать пакет» в карточке «Sp. z o.o. без деятельности» — предвыбор статуса
-    document.querySelectorAll('[data-preset]').forEach(function (el) {
-      el.addEventListener('click', function () {
-        var radio = quiz.querySelector('[name="q_status"][value="' + el.getAttribute('data-preset') + '"]');
-        if (!radio) return;
-        radio.checked = true;
-        step = 2;
-        if (!started) { started = true; track('quiz_start', { preset: radio.value }); }
-        render();
-      });
-    });
-
-    document.getElementById('quiz-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      var r = calc();
-      submitLead(this, { company_status: r.status, invoices: r.docs, extras: r.extras, estimate_monthly: r.monthly, estimate_one_time: r.oneTime });
     });
 
     /* ---------- FAQ: одна открытая вкладка ---------- */
@@ -695,7 +519,6 @@
       });
     });
 
-    render();
   })();
   </script>
 </body>
