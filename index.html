@@ -391,6 +391,7 @@
 
     /* ---------- Config ---------- */
     var LEAD_ENDPOINT = '/api/send-lead';
+    var THANK_YOU_URL = '/thank-you.html';
     var LANDING_TYPE = 'Spółka z o.o.';
 
     var PAINS = [
@@ -523,6 +524,8 @@
           form.querySelector('.success').classList.remove('hidden');
           // PII (имя, телефон) в GA4 не передаём — только параметры заявки
           track('generate_lead', { form_id: data.form_id, contact_type: data.contact_type, company_status: data.company_status || '' });
+          // Небольшая пауза, чтобы теги GTM успели отправить событие до перехода
+          setTimeout(function () { location.href = THANK_YOU_URL; }, 400);
         })
         .catch(function () {
           btn.disabled = false;

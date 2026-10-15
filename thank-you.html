@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Спасибо! Заявка принята — IMOSTA Group</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
+  <meta name="theme-color" content="#D11329">
+
+  <!-- GTM: вставьте контейнер сюда (GTM-XXXXXXX). Все события уходят в window.dataLayer -->
+  <script>window.dataLayer = window.dataLayer || [];</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    // Токены бренда — те же, что в index.html
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#D11329', hover: '#A80F21', soft: '#F6DFDC', tint: '#FBF3F2' },
+            ink: { DEFAULT: '#000000', dark: '#151515', muted: '#5F5F5F' },
+            line: '#EAEAEA',
+          },
+          fontFamily: { sans: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-sans text-ink bg-white antialiased min-h-screen flex flex-col">
+
+  <!-- ============ HEADER ============ -->
+  <header class="bg-white border-b border-line">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center gap-4">
+      <a href="/" class="font-extrabold text-xl tracking-tight text-ink-dark shrink-0">IMOSTA<span class="text-brand"> Group</span></a>
+      <div class="ml-auto flex items-center gap-4">
+        <a href="tel:+48573581162" data-track="call" data-location="thank_you_header" class="flex items-center gap-2 font-semibold hover:text-brand" aria-label="Позвонить +48 573 581 162">
+          <svg class="w-5 h-5 text-brand" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          <span class="hidden sm:inline">+48 573 581 162</span>
+        </a>
+        <a href="https://t.me/IMOSTA_bot" target="_blank" rel="noopener noreferrer" data-track="telegram" data-location="thank_you_header" class="flex items-center gap-2 font-semibold text-ink-muted hover:text-brand" aria-label="Telegram">
+          <svg class="w-5 h-5 text-brand" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3.1c.9-.3 1.6.2 1.4 1.2z"/></svg>
+          <span class="hidden sm:inline">Telegram</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ THANK YOU ============ -->
+  <main class="flex-1 bg-gradient-to-b from-brand-tint to-white flex items-center">
+    <div class="max-w-2xl mx-auto px-4 py-16 md:py-24 text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand text-white shadow-xl shadow-brand/25 mb-8" aria-hidden="true">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Спасибо! Ваша заявка принята</h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto">
+        Мы получили ваши контактные данные. Наш специалист свяжется с вами в кратчайшие сроки в рабочее время, чтобы обсудить все детали бухгалтерского сопровождения вашей Sp. z o.o.
+      </p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 max-w-md mx-auto mb-8">
+        <p class="text-sm text-gray-700 font-medium mb-3">Вопрос срочный или хотите написать напрямую?</p>
+        <a href="https://t.me/IMOSTA_bot" target="_blank" rel="noopener noreferrer" data-track="telegram" data-location="thank_you_cta" class="inline-flex items-center justify-center w-full px-6 py-3 bg-[#D11329] hover:bg-[#b50f22] text-white font-semibold rounded-lg transition-colors">
+          Написать в Telegram @IMOSTA_bot
+        </a>
+      </div>
+
+      <a href="/" class="text-sm text-gray-500 hover:text-gray-900 underline underline-offset-4">← Вернуться на главную</a>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-ink-dark text-white/70 text-sm">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+      <p><span class="text-white font-bold">IMOSTA<span class="text-brand"> Group</span></span> · ul. Ostrobramska 101/336, 04-041 Warszawa</p>
+      <p><a href="tel:+48573581162" data-track="call" data-location="thank_you_footer" class="text-white hover:text-brand">+48 573 581 162</a> · <a href="mailto:info@imosta.pl" data-track="email" data-location="thank_you_footer" class="text-white hover:text-brand">info@imosta.pl</a></p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    var LANDING_TYPE = 'Spółka z o.o.';
+    function track(event, params) {
+      window.dataLayer.push(Object.assign({ event: event, landing_type: LANDING_TYPE }, params || {}));
+    }
+    track('thank_you_view');
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('[data-track]');
+      if (!el) return;
+      var type = el.getAttribute('data-track');
+      track('contact_click', { contact_type: type, location: el.getAttribute('data-location') || '' });
+    });
+  })();
+  </script>
+</body>
+</html>
