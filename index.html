@@ -3,6 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Consent Mode v2: всё запрещено по умолчанию, до выбора пользователя -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+    try {
+      if (localStorage.getItem('cookie_consent') === 'all') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -384,6 +405,7 @@
         <nav aria-label="Правовая информация" class="flex flex-wrap gap-x-4 gap-y-1 text-xs pt-2">
           <a href="https://imosta.pl/ru/privacy-policy/" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-brand underline decoration-white/30 underline-offset-4 hover:decoration-brand transition">Политика конфиденциальности</a>
           <a href="https://imosta.pl/ru/cookiepolicy/" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-brand underline decoration-white/30 underline-offset-4 hover:decoration-brand transition">Политика cookies</a>
+          <button type="button" data-cookie-settings class="text-white/70 hover:text-brand underline decoration-white/30 underline-offset-4 hover:decoration-brand transition">Настройки cookies</button>
         </nav>
       </div>
     </div>
@@ -585,6 +607,53 @@
     });
 
   })();
+  </script>
+  <!-- ============ COOKIE CONSENT ============ -->
+  <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на cookies" hidden class="fixed bottom-0 inset-x-0 z-50 bg-ink-dark text-white/70 border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.25)] pb-[env(safe-area-inset-bottom)]">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row gap-3 md:gap-6 md:items-center md:justify-between">
+      <p class="text-xs sm:text-sm">Мы используем файлы cookie для анализа трафика и персонализации рекламы. Подробнее в нашей <a href="https://imosta.pl/ru/cookiepolicy/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand underline decoration-white/30 underline-offset-4 hover:decoration-brand transition">Политике cookies</a>.</p>
+      <div class="flex gap-2 shrink-0">
+        <button type="button" data-consent="essential" class="flex-1 md:flex-none text-sm font-semibold text-white/80 hover:text-white border-2 border-white/30 hover:border-white px-4 py-2 transition">Только обязательные</button>
+        <button type="button" data-consent="all" class="flex-1 md:flex-none text-sm font-bold text-white bg-brand hover:bg-brand-hover border-2 border-brand hover:border-brand-hover px-4 py-2 transition">Принять все</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var banner = document.getElementById('cookie-banner');
+      var stored = null;
+      try { stored = localStorage.getItem('cookie_consent'); } catch (e) {}
+      if (!stored) banner.hidden = false;
+      document.querySelectorAll('[data-cookie-settings]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          banner.hidden = false;
+          banner.querySelector('[data-consent]').focus();
+        });
+      });
+      banner.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-consent]');
+        if (!btn) return;
+        var choice = btn.getAttribute('data-consent');
+        try { localStorage.setItem('cookie_consent', choice); } catch (e) {}
+        if (choice === 'all') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+          window.dataLayer.push({ 'event': 'cookie_consent_accepted' });
+        } else {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
+        banner.hidden = true;
+      });
+    })();
   </script>
 </body>
 </html>
