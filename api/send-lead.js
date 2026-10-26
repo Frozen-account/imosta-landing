@@ -6,7 +6,7 @@ const LANDING_TYPE = 'Spółka z o.o.';
 const MAX_BODY_BYTES = 10 * 1024;
 
 const LABELS = {
-  form_id: { hero: 'Форма на первом экране', quiz: 'Калькулятор', bottom: 'Форма внизу страницы' },
+  form_id: { hero: 'Форма на первом экране', quiz: 'Калькулятор', bottom: 'Форма внизу страницы', landing: 'Лендинг /landing (консультация)' },
   company_status: {
     active: 'Активная / действующая',
     new_or_dormant: 'Новая / без деятельности',
@@ -27,6 +27,64 @@ function escapeHtml(value) {
 function clean(value, max = 200) {
   if (value === undefined || value === null) return '';
   return String(value).replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, max);
+}
+
+// Атрибуция: UTM-метки, click ID и реферер последнего рекламного касания (трекер на лендинге)
+const AD_PARAM_LIMITS = {
+  utm_source: 150, utm_medium: 150, utm_campaign: 150, utm_content: 150, utm_term: 150,
+  fbclid: 500, gclid: 500,
+};
+const URL_MAX = 1000;
+
+function parseAttribution(body, page) {
+  const a = { referrer: clean(body.referrer, URL_MAX), landing_url: clean(body.landing_url, URL_MAX) };
+  for (const [key, max] of Object.entries(AD_PARAM_LIMITS)) a[key] = clean(body[key], max);
+  // Фолбэк для закэшированных страниц без трекера: метки из URL, с которого отправлена заявка
+  if (!Object.keys(AD_PARAM_LIMITS).some((key) => a[key])) {
+    try {
+      const params = new URL(page).searchParams;
+      for (const [key, max] of Object.entries(AD_PARAM_LIMITS)) a[key] = clean(params.get(key), max);
+    } catch { /* page пустой или не URL */ }
+  }
+  return a;
+}
+
+function hostOf(url) {
+  try { return new URL(url).hostname; } catch { return url; }
+}
+
+// Страница без query: UTM и click ID выводятся отдельным блоком
+function pageLabel(url) {
+  try { const u = new URL(url); return u.origin + u.pathname; } catch { return url; }
+}
+
+function idPreview(value) {
+  return value.length > 24 ? `${value.slice(0, 24)}…` : value;
+}
+
+function attributionLines(a) {
+  const lines = [];
+  if (a.utm_source || a.utm_medium) {
+    lines.push(`📊 <b>Источник:</b> ${escapeHtml(a.utm_source || '—')} / ${escapeHtml(a.utm_medium || '—')}`);
+  } else if (a.fbclid) {
+    lines.push('📊 <b>Источник:</b> Meta Ads (fbclid, без UTM)');
+  } else if (a.gclid) {
+    lines.push('📊 <b>Источник:</b> Google Ads (gclid, без UTM)');
+  } else if (a.referrer) {
+    lines.push(`📊 <b>Источник:</b> переход с ${escapeHtml(hostOf(a.referrer))} / нет UTM`);
+  } else {
+    lines.push('📊 <b>Источник:</b> прямой заход / нет UTM');
+  }
+  if (a.utm_campaign) lines.push(`🎯 <b>Кампания:</b> ${escapeHtml(a.utm_campaign)}`);
+  if (a.utm_content) lines.push(`📝 <b>Креатив / Контент:</b> ${escapeHtml(a.utm_content)}`);
+  if (a.utm_term) lines.push(`🔑 <b>Ключ:</b> ${escapeHtml(a.utm_term)}`);
+
+  const refs = [];
+  if (a.gclid) refs.push(`gclid ${idPreview(a.gclid)}`);
+  if (a.fbclid) refs.push(`fbclid ${idPreview(a.fbclid)}`);
+  if (a.referrer) refs.push(pageLabel(a.referrer).slice(0, 150));
+  if (refs.length) lines.push(`🔗 <b>Реферер / Клик:</b> ${escapeHtml(refs.join(' · '))}`);
+  return lines;
 }
 
 // Та же логика, что и на клиенте: номер (PL или международный), Telegram @username или e-mail
@@ -68,7 +126,8 @@ function buildMessage(lead, contact) {
     lines.push(`<b>Телефон:</b> ${escapeHtml(contact.value)}`);
   }
   if (lead.company_status) lines.push(`<b>Статус компании:</b> ${escapeHtml(label('company_status', lead.company_status))}`);
-  lines.push(`<b>Источник:</b> ${escapeHtml(label('form_id', lead.form_id))}${lead.source ? ` (${escapeHtml(lead.source)})` : ''}`);
+  if (lead.business_type) lines.push(`<b>Форма бизнеса:</b> ${escapeHtml(lead.business_type)}`);
+  lines.push(`<b>Форма:</b> ${escapeHtml(label('form_id', lead.form_id))}${lead.source ? ` (${escapeHtml(lead.source)})` : ''}`);
 
   if (lead.form_id === 'quiz') {
     lines.push('', '<b>Расчёт из калькулятора</b>');
@@ -78,8 +137,12 @@ function buildMessage(lead, contact) {
     if (lead.estimate_one_time) lines.push(`Разово: ${lead.estimate_one_time} zł`);
   }
 
+  lines.push('', ...attributionLines(lead.attribution));
+
   lines.push('');
-  if (lead.page) lines.push(`<b>Страница:</b> ${escapeHtml(lead.page)}`);
+  if (lead.page) lines.push(`<b>Страница:</b> ${escapeHtml(pageLabel(lead.page))}`);
+  const entry = lead.attribution.landing_url && pageLabel(lead.attribution.landing_url);
+  if (entry && entry !== pageLabel(lead.page)) lines.push(`<b>Страница входа:</b> ${escapeHtml(entry)}`);
   lines.push(`<b>Время:</b> ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Warsaw' })} (Варшава)`);
   return lines.join('\n');
 }
@@ -112,9 +175,11 @@ module.exports = async function handler(req, res) {
     extras: Array.isArray(body.extras) ? body.extras.slice(0, 10).map((x) => clean(x, 20)).filter(Boolean) : [],
     estimate_monthly: toNumber(body.estimate_monthly),
     estimate_one_time: toNumber(body.estimate_one_time),
-    page: clean(body.page, 300),
+    business_type: clean(body.business_type, 40),
+    page: clean(body.page, URL_MAX),
   };
-  if ((lead.form_id === 'hero' || lead.form_id === 'bottom') && lead.name.length < 2) {
+  lead.attribution = parseAttribution(body, lead.page);
+  if (['hero', 'bottom', 'landing'].includes(lead.form_id) && lead.name.length < 2) {
     return res.status(422).json({ ok: false, error: 'invalid_name' });
   }
 

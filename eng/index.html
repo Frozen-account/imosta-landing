@@ -427,6 +427,91 @@
     </a>
   </div>
 
+  <!-- ============ UTM / CLICK ID ATTRIBUTION ============ -->
+  <script>
+  // Атрибуция по последнему рекламному касанию (30 дней): UTM-метки, fbclid/gclid,
+  // внешний реферер и URL входа. Хранилище: localStorage → sessionStorage → память.
+  // Данные уходят только в заявку (api/send-lead), в dataLayer не передаются.
+  (function () {
+    'use strict';
+    var KEY = 'imosta_attribution';
+    var TTL = 30 * 24 * 60 * 60 * 1000;
+    var AD_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+    var memory = null;
+
+    function probe(type) {
+      try {
+        var s = window[type];
+        s.setItem('__imosta_probe', '1');
+        s.removeItem('__imosta_probe');
+        return s;
+      } catch (e) { return null; }
+    }
+    var storage = probe('localStorage') || probe('sessionStorage');
+
+    function write(value) {
+      memory = value ? JSON.stringify(value) : null;
+      try {
+        if (!storage) return;
+        if (memory) storage.setItem(KEY, memory); else storage.removeItem(KEY);
+      } catch (e) { /* квота / приватный режим — остаётся копия в памяти */ }
+    }
+
+    function read() {
+      var raw = memory;
+      try { if (storage) raw = storage.getItem(KEY) || raw; } catch (e) { /* используем память */ }
+      if (!raw) return null;
+      try {
+        var saved = JSON.parse(raw);
+        if (saved && saved.ts && Date.now() - saved.ts < TTL) return saved;
+      } catch (e) { /* битые данные — сбрасываем */ }
+      write(null);
+      return null;
+    }
+
+    function externalReferrer() {
+      try {
+        var ref = document.referrer;
+        if (ref && new URL(ref).hostname !== location.hostname) return ref.slice(0, 1000);
+      } catch (e) { /* некорректный реферер */ }
+      return '';
+    }
+
+    function hasAdParams(obj) {
+      return AD_PARAMS.some(function (p) { return !!obj[p]; });
+    }
+
+    var touch = {};
+    try {
+      var params = new URLSearchParams(location.search);
+      AD_PARAMS.forEach(function (p) {
+        var v = params.get(p);
+        if (v) touch[p] = v.slice(0, p.indexOf('utm_') === 0 ? 150 : 500);
+      });
+    } catch (e) { /* без URLSearchParams — работаем без меток */ }
+
+    var saved = read();
+    var referrer = externalReferrer();
+    // Новое рекламное касание всегда перезаписывает сохранённое (last touch).
+    // Органический переход с другого сайта не затирает рекламное касание.
+    if (hasAdParams(touch) || (referrer && !(saved && hasAdParams(saved)))) {
+      touch.referrer = referrer;
+      touch.landing_url = location.href.slice(0, 1000);
+      touch.ts = Date.now();
+      write(touch);
+    }
+
+    window.imostaAttribution = function () {
+      var a = read();
+      var out = {};
+      if (!a) return out;
+      AD_PARAMS.concat(['referrer', 'landing_url']).forEach(function (k) {
+        if (a[k]) out[k] = String(a[k]);
+      });
+      return out;
+    };
+  })();
+  </script>
   <script>
   (function () {
     'use strict';
@@ -527,6 +612,8 @@
     /* ---------- Lead submission ---------- */
     function submitLead(form, extra) {
       var data = { landing_type: LANDING_TYPE, form_id: form.getAttribute('data-form'), source: form.getAttribute('data-source') || '', page: location.href, lang: 'en' };
+      // UTM / fbclid / gclid последнего рекламного касания (см. скрипт атрибуции выше)
+      if (window.imostaAttribution) Object.assign(data, window.imostaAttribution());
       var ok = true;
 
       var name = form.querySelector('[name="name"]');
